@@ -48,7 +48,10 @@ Information about WCAG compliance and accessibility features.
 
 ## How to Contact Us
 
-- (No contact details configured yet.)
+- Email: solgag@gmail.com
+- Phone: 05444444444
+- Phone (tel): tel:05444444444
+- Address: מנחם בגין 7, רמת גן
 
 ### Contact form
 - URL: https://solgag.zappy5.app/solar-calculator
