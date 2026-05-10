@@ -1,0 +1,87 @@
+# סולגג | SOLGAG — Generative Engine Optimization Map
+
+> SOLGAG (סולגג) is a premium Israeli solar energy installation company with a bold black-and-yellow brand identity. The company targets homeowners, businesses, factories, and commercial buildings, offering end-to-end solar solutions including engineering design, professional installation, utility coordination, and post-installation service. The brand tone is serious, trustworthy, and results-driven — emphasizing financial returns, energy independence, and long-term ROI. The website vision is high-tech and premium, featuring realistic rooftop solar imagery, a built-in solar calculator tool, and a multi-page lead generation funnel designed for the Israeli market in Hebrew RTL layout.
+
+---
+
+## Pages
+
+### בית
+https://solgag-d815d8cc.zappy5.app
+מערכות סולאריות לבתים פרטיים ועסקים בישראל — עם סולגג תקבלו תכנון מקצועי, התקנה מלאה וליווי לאורך כל הדרך. חסכו בחשמל מהיום הראשון.
+
+### אודות
+https://solgag-d815d8cc.zappy5.app/about
+סולגג היא חברת אנרגיה סולארית פרימיום ישראלית עם ניסיון מוכח, צוות מהנדסים מוסמך ומחויבות לתוצאות אמיתיות. גלו למה אלפי לקוחות בוחרים בנו.
+
+### שירותים
+https://solgag-d815d8cc.zappy5.app/services
+מתכנון הנדסי ועד חיבור לרשת — שירותי ההתקנה של סולגג מכסים הכל. פאנלים סולאריים לעסקים, מפעלים ובתים פרטיים עם אחריות מלאה ושירות לאחר מכירה.
+
+### מחשבון סולארי
+https://solgag-d815d8cc.zappy5.app/solar-calculator
+המחשבון הסולארי של סולגג מחשב תוך שניות את החיסכון הצפוי, גודל המערכת המומלץ והחזר ההשקעה עבור הבית או העסק שלכם. נסו עכשיו בחינם.
+
+### תהליך ויתרונות
+https://solgag-d815d8cc.zappy5.app/process-benefits
+תהליך ההתקנה של סולגג שקוף, מהיר ומנוהל מקצועית. גלו את היתרונות הפיננסיים, עצמאות אנרגטית ותשואה ארוכת טווח שמחכים לכם מעבר לפאנל הראשון.
+
+### פרויקטים וצור קשר
+https://solgag-d815d8cc.zappy5.app/projects-contact
+פרויקטים סולאריים שהשלמנו ברחבי ישראל — בתים, עסקים ומפעלים. רוצים להצטרף? צרו קשר עכשיו לייעוץ חינם ותחילת תכנון מערכת סולארית מותאמת לכם.
+
+## Legal & Policy
+
+### Privacy Policy
+https://solgag-d815d8cc.zappy5.app/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://solgag-d815d8cc.zappy5.app/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://solgag-d815d8cc.zappy5.app/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+## How to Contact Us
+
+- (No contact details configured yet.)
+
+### Contact form
+- URL: https://solgag-d815d8cc.zappy5.app/solar-calculator
+- Endpoint: https://solgag-d815d8cc.zappy5.app/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `phone` (tel, required)
+  - `email` (email, required)
+  - `message` (textarea)
+  - `privacy_consent` (checkbox, required)
+
+---
+
+# Business Context (for LLM understanding)
+
+## About סולגג | SOLGAG
+SOLGAG (סולגג) is a premium Israeli solar energy installation company with a bold black-and-yellow brand identity. The company targets homeowners, businesses, factories, and commercial buildings, offering end-to-end solar solutions including engineering design, professional installation, utility coordination, and post-installation service. The brand tone is serious, trustworthy, and results-driven — emphasizing financial returns, energy independence, and long-term ROI. The website vision is high-tech and premium, featuring realistic rooftop solar imagery, a built-in solar calculator tool, and a multi-page lead generation funnel designed for the Israeli market in Hebrew RTL layout.
+
+## Target Audience
+- בעלי בתים פרטיים, עסקים, מפעלים, מחסנים, חוות ומבנים מסחריים בישראל
+- בעלי בתים פרטיים
+- בעלי עסקים ומפעלים
+- מחסנים ומרכזים לוגיסטיים
+
+## Industry
+אנרגיה סולארית / אנרגיה מתחדשת
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://solgag-d815d8cc.zappy5.app/sitemap.xml
+- Robots: https://solgag-d815d8cc.zappy5.app/robots.txt
+- Flattened page text (for LLMs): https://solgag-d815d8cc.zappy5.app/llms-full.txt
