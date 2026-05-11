@@ -50,4 +50,4 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
-Sitemap: https://solgag.zappy5.app/sitemap.xml
+Sitemap: https://sol-gag.com/sitemap.xml

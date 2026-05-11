@@ -2,13 +2,13 @@
 
 SOLGAG (סולגג) is a premium Israeli solar energy installation company with a bold black-and-yellow brand identity. The company targets homeowners, businesses, factories, and commercial buildings, offering end-to-end solar solutions including engineering design, professional installation, utility coordination, and post-installation service. The brand tone is serious, trustworthy, and results-driven — emphasizing financial returns, energy independence, and long-term ROI. The website vision is high-tech and premium, featuring realistic rooftop solar imagery, a built-in solar calculator tool, and a multi-page lead generation funnel designed for the Israeli market in Hebrew RTL layout.
 
-Source: https://solgag.zappy5.app
+Source: https://sol-gag.com
 
 ---
 
 ## הפכו את הגג לרווח — סולגג | SOLGAG
 
-URL: https://solgag.zappy5.app
+URL: https://sol-gag.com
 Description: מערכות סולאריות לבתים פרטיים ועסקים בישראל — עם סולגג תקבלו תכנון מקצועי, התקנה מלאה וליווי לאורך כל הדרך. חסכו בחשמל מהיום הראשון.
 
 הפכו את הגג לרווח — סולגג | SOLGAG
@@ -606,7 +606,7 @@ ROI מהיר ביחס לכל השקעה אנרגטית אחרת בשוק
 
 ## מי עומד מאחורי הפאנלים שלכם — סולגג | SOLGAG
 
-URL: https://solgag.zappy5.app/about
+URL: https://sol-gag.com/about
 Description: סולגג היא חברת אנרגיה סולארית פרימיום ישראלית עם ניסיון מוכח, צוות מהנדסים מוסמך ומחויבות לתוצאות אמיתיות. גלו למה אלפי לקוחות בוחרים בנו.
 
 מי עומד מאחורי הפאנלים שלכם — סולגג | SOLGAG
@@ -1076,7 +1076,7 @@ Description: סולגג היא חברת אנרגיה סולארית פרימיו
 
 ## פתרון סולארי שלם מא&#39; עד ת&#39; — סולגג | SOLGAG
 
-URL: https://solgag.zappy5.app/services
+URL: https://sol-gag.com/services
 Description: מתכנון הנדסי ועד חיבור לרשת — שירותי ההתקנה של סולגג מכסים הכל. פאנלים סולאריים לעסקים, מפעלים ובתים פרטיים עם אחריות מלאה ושירות לאחר מכירה.
 
 פתרון סולארי שלם מא' עד ת' — סולגג | SOLGAG
@@ -1620,7 +1620,7 @@ Description: מתכנון הנדסי ועד חיבור לרשת — שירותי
 
 ## גלו כמה תחסכו עוד היום — סולגג | SOLGAG
 
-URL: https://solgag.zappy5.app/solar-calculator
+URL: https://sol-gag.com/solar-calculator
 Description: המחשבון הסולארי של סולגג מחשב תוך שניות את החיסכון הצפוי, גודל המערכת המומלץ והחזר ההשקעה עבור הבית או העסק שלכם. נסו עכשיו בחינם.
 
 גלו כמה תחסכו עוד היום — סולגג | SOLGAG
@@ -2242,7 +2242,7 @@ kWh / חודש
 
 ## מהחתימה ועד הייצור — כך זה עובד — סולגג | SOLGAG
 
-URL: https://solgag.zappy5.app/process-benefits
+URL: https://sol-gag.com/process-benefits
 Description: תהליך ההתקנה של סולגג שקוף, מהיר ומנוהל מקצועית. גלו את היתרונות הפיננסיים, עצמאות אנרגטית ותשואה ארוכת טווח שמחכים לכם מעבר לפאנל הראשון.
 
 מהחתימה ועד הייצור — כך זה עובד — סולגג | SOLGAG
@@ -2845,7 +2845,7 @@ VS
 
 ## ראו תוצאות אמיתיות — דברו איתנו — סולגג | SOLGAG
 
-URL: https://solgag.zappy5.app/projects-contact
+URL: https://sol-gag.com/projects-contact
 Description: פרויקטים סולאריים שהשלמנו ברחבי ישראל — בתים, עסקים ומפעלים. רוצים להצטרף? צרו קשר עכשיו לייעוץ חינם ותחילת תכנון מערכת סולארית מותאמת לכם.
 
 ראו תוצאות אמיתיות — דברו איתנו — סולגג | SOLGAG
@@ -3299,7 +3299,7 @@ Description: פרויקטים סולאריים שהשלמנו ברחבי ישר�
 
 ## מדיניות פרטיות
 
-URL: https://solgag.zappy5.app/privacy
+URL: https://sol-gag.com/privacy
 Description: מדיניות הפרטיות שלנו - כיצד אנו אוספים, משתמשים ומגנים על המידע שלכם
 
 מדיניות פרטיות
@@ -3572,7 +3572,7 @@ Description: מדיניות הפרטיות שלנו - כיצד אנו אוספי
 
 ## הצהרת נגישות
 
-URL: https://solgag.zappy5.app/accessibility
+URL: https://sol-gag.com/accessibility
 Description: הצהרת הנגישות שלנו - מחויבותנו לנגישות דיגיטלית
 
 הצהרת נגישות
@@ -3854,7 +3854,7 @@ Description: הצהרת הנגישות שלנו - מחויבותנו לנגיש�
 
 ## תנאי שימוש
 
-URL: https://solgag.zappy5.app/terms
+URL: https://sol-gag.com/terms
 Description: תנאי השימוש באתר - הזכויות והחובות של המשתמשים
 
 תנאי שימוש

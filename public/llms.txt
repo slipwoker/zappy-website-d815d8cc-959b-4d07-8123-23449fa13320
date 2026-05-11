@@ -7,41 +7,41 @@
 ## Pages
 
 ### בית
-https://solgag.zappy5.app
+https://sol-gag.com
 מערכות סולאריות לבתים פרטיים ועסקים בישראל — עם סולגג תקבלו תכנון מקצועי, התקנה מלאה וליווי לאורך כל הדרך. חסכו בחשמל מהיום הראשון.
 
 ### אודות
-https://solgag.zappy5.app/about
+https://sol-gag.com/about
 סולגג היא חברת אנרגיה סולארית פרימיום ישראלית עם ניסיון מוכח, צוות מהנדסים מוסמך ומחויבות לתוצאות אמיתיות. גלו למה אלפי לקוחות בוחרים בנו.
 
 ### שירותים
-https://solgag.zappy5.app/services
+https://sol-gag.com/services
 מתכנון הנדסי ועד חיבור לרשת — שירותי ההתקנה של סולגג מכסים הכל. פאנלים סולאריים לעסקים, מפעלים ובתים פרטיים עם אחריות מלאה ושירות לאחר מכירה.
 
 ### מחשבון סולארי
-https://solgag.zappy5.app/solar-calculator
+https://sol-gag.com/solar-calculator
 המחשבון הסולארי של סולגג מחשב תוך שניות את החיסכון הצפוי, גודל המערכת המומלץ והחזר ההשקעה עבור הבית או העסק שלכם. נסו עכשיו בחינם.
 
 ### תהליך ויתרונות
-https://solgag.zappy5.app/process-benefits
+https://sol-gag.com/process-benefits
 תהליך ההתקנה של סולגג שקוף, מהיר ומנוהל מקצועית. גלו את היתרונות הפיננסיים, עצמאות אנרגטית ותשואה ארוכת טווח שמחכים לכם מעבר לפאנל הראשון.
 
 ### פרויקטים וצור קשר
-https://solgag.zappy5.app/projects-contact
+https://sol-gag.com/projects-contact
 פרויקטים סולאריים שהשלמנו ברחבי ישראל — בתים, עסקים ומפעלים. רוצים להצטרף? צרו קשר עכשיו לייעוץ חינם ותחילת תכנון מערכת סולארית מותאמת לכם.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://solgag.zappy5.app/privacy
+https://sol-gag.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://solgag.zappy5.app/terms
+https://sol-gag.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://solgag.zappy5.app/accessibility
+https://sol-gag.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -54,8 +54,8 @@ Information about WCAG compliance and accessibility features.
 - Address: מנחם בגין 7, רמת גן
 
 ### Contact form
-- URL: https://solgag.zappy5.app/solar-calculator
-- Endpoint: https://solgag.zappy5.app/api/email/contact-form
+- URL: https://sol-gag.com/solar-calculator
+- Endpoint: https://sol-gag.com/api/email/contact-form
 - Method: POST
 - Content-Type: application/json
 - Fields:
@@ -85,6 +85,6 @@ SOLGAG (סולגג) is a premium Israeli solar energy installation company with 
 
 # Machine-readable feeds
 
-- Sitemap (XML): https://solgag.zappy5.app/sitemap.xml
-- Robots: https://solgag.zappy5.app/robots.txt
-- Flattened page text (for LLMs): https://solgag.zappy5.app/llms-full.txt
+- Sitemap (XML): https://sol-gag.com/sitemap.xml
+- Robots: https://sol-gag.com/robots.txt
+- Flattened page text (for LLMs): https://sol-gag.com/llms-full.txt
