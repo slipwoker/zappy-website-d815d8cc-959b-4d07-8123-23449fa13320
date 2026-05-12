@@ -1288,7 +1288,212 @@
 </section>
   </main>
   
-  <footer class="site-footer" dir="rtl">
+  
+
+<section class="solcalc-section" dir="rtl" lang="he" aria-label="מחשבון סולרי חכם">
+  <div class="solcalc-container">
+
+    <!-- Header -->
+    <header class="solcalc-header">
+      <div class="solcalc-badge">☀️ כלי חינמי</div>
+      <h2 class="solcalc-title">מחשבון סולרי חכם</h2>
+      <p class="solcalc-subtitle">קבל הערכה מקצועית לגג שלך תוך שניות</p>
+    </header>
+
+    <!-- Calculator Card -->
+    <div class="solcalc-card">
+
+      <!-- Form -->
+      <form class="solcalc-form" id="solarCalcForm" novalidate="" aria-label="טופס מחשבון סולרי">
+        <div class="solcalc-form-grid">
+
+          <div class="solcalc-field">
+            <label class="solcalc-label" for="roofArea">
+              <span class="solcalc-label-icon">📐</span>
+              שטח הגג (מ"ר)
+            </label>
+            <input class="solcalc-input" type="number" id="roofArea" name="roofArea" placeholder="לדוגמה: 100" min="10" max="5000" aria-required="true" aria-describedby="roofArea-hint">
+            <span class="solcalc-hint" id="roofArea-hint">מינימום 10 מ"ר</span>
+          </div>
+
+          <div class="solcalc-field">
+            <label class="solcalc-label" for="roofType">
+              <span class="solcalc-label-icon">🏠</span>
+              סוג הגג
+            </label>
+            <select class="solcalc-select" id="roofType" name="roofType" aria-required="true">
+              <option value="flat">גג שטוח</option>
+              <option value="tiles">גג רעפים</option>
+            </select>
+          </div>
+
+          <div class="solcalc-field">
+            <label class="solcalc-label" for="roofDirection">
+              <span class="solcalc-label-icon">🧭</span>
+              כיוון הגג
+            </label>
+            <select class="solcalc-select" id="roofDirection" name="roofDirection" aria-required="true">
+              <option value="south">דרום</option>
+              <option value="north">צפון</option>
+              <option value="east-west">מזרח-מערב</option>
+            </select>
+          </div>
+
+          <div class="solcalc-field">
+            <label class="solcalc-label" for="monthlyBill">
+              <span class="solcalc-label-icon">💡</span>
+              עלות חשמל חודשית (₪)
+            </label>
+            <input class="solcalc-input" type="number" id="monthlyBill" name="monthlyBill" placeholder="לדוגמה: 600" min="0" aria-describedby="monthlyBill-hint">
+            <span class="solcalc-hint" id="monthlyBill-hint">אופציונלי — לחישוב מדויק יותר</span>
+          </div>
+
+        </div>
+
+        <div class="solcalc-error-msg" id="calcError" role="alert" aria-live="polite" hidden="">
+          <span>⚠️</span> אנא הזן שטח גג תקין (לפחות 10 מ"ר) כדי לחשב.
+        </div>
+
+        <button class="solcalc-btn-calc" type="button" id="calcBtn" aria-label="חשב את הנתונים הסולריים">
+          <span class="solcalc-btn-icon">⚡</span>
+          חשב עכשיו
+        </button>
+      </form>
+
+      <!-- Results -->
+      <div class="solcalc-results" id="calcResults" hidden="" aria-live="polite" aria-label="תוצאות המחשבון">
+        <div class="solcalc-results-header">
+          <h3 class="solcalc-results-title">✅ תוצאות ההערכה שלך</h3>
+          <p class="solcalc-results-note">הערכה ראשונית — לבדיקה מדויקת פנה לאיש מקצוע</p>
+        </div>
+
+        <div class="solcalc-results-grid">
+
+          <div class="solcalc-result-card" data-index="0">
+            <div class="solcalc-result-icon">⚡</div>
+            <div class="solcalc-result-label">גודל מערכת מומלץ</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="res-size">—</span>
+              <span class="solcalc-result-unit">kW</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card" data-index="1">
+            <div class="solcalc-result-icon">💰</div>
+            <div class="solcalc-result-label">עלות מערכת משוערת</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="res-cost">—</span>
+              <span class="solcalc-result-unit">₪</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card" data-index="2">
+            <div class="solcalc-result-icon">☀️</div>
+            <div class="solcalc-result-label">תפוקה שנתית צפויה</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="res-output">—</span>
+              <span class="solcalc-result-unit">kWh</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card" data-index="3">
+            <div class="solcalc-result-icon">📈</div>
+            <div class="solcalc-result-label">תשואה שנתית</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="res-roi">—</span>
+              <span class="solcalc-result-unit">%</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card" data-index="4">
+            <div class="solcalc-result-icon">🔄</div>
+            <div class="solcalc-result-label">החזר השקעה</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="res-payback">—</span>
+              <span class="solcalc-result-unit">שנים</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card" data-index="5">
+            <div class="solcalc-result-icon">🌱</div>
+            <div class="solcalc-result-label">חיסכון CO₂ שנתי</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="res-co2">—</span>
+              <span class="solcalc-result-unit">טון</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="solcalc-cta-block">
+          <p class="solcalc-cta-text">רוצה לדעת אם זה כדאי עבורך? קבל בדיקה מקצועית חינם!</p>
+          <button class="solcalc-btn-lead" type="button" id="openLeadForm" aria-label="פתח טופס לבדיקת כדאיות חינם">
+            <span class="solcalc-btn-icon">🎯</span>
+            קבל בדיקת כדאיות ללא עלות
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /.solcalc-card -->
+
+    <!-- Lead Form Modal -->
+    <div class="solcalc-modal-overlay" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle" hidden="">
+      <div class="solcalc-modal">
+        <button class="solcalc-modal-close" id="closeModal" aria-label="סגור טופס">✕</button>
+        <div class="solcalc-modal-header">
+          <div class="solcalc-modal-icon">🎯</div>
+          <h3 class="solcalc-modal-title" id="leadModalTitle">בדיקת כדאיות ללא עלות</h3>
+          <p class="solcalc-modal-subtitle">מלא את הפרטים ומומחה סולגג יחזור אליך תוך 24 שעות</p>
+        </div>
+        <form class="solcalc-lead-form" id="leadForm" novalidate="" aria-label="טופס ליד">
+
+          <div class="solcalc-lead-field">
+            <label class="solcalc-lead-label" for="leadName">שם מלא</label>
+            <input class="solcalc-lead-input" type="text" id="leadName" name="leadName" placeholder="ישראל ישראלי" autocomplete="name" aria-required="true">
+          </div>
+
+          <div class="solcalc-lead-field">
+            <label class="solcalc-lead-label" for="leadPhone">טלפון</label>
+            <input class="solcalc-lead-input" type="tel" id="leadPhone" name="leadPhone" placeholder="05X-XXXXXXX" autocomplete="tel" aria-required="true">
+          </div>
+
+          <div class="solcalc-lead-field">
+            <label class="solcalc-lead-label" for="leadCity">עיר</label>
+            <input class="solcalc-lead-input" type="text" id="leadCity" name="leadCity" placeholder="תל אביב" autocomplete="address-level2" aria-required="true">
+          </div>
+
+          <div class="solcalc-lead-field">
+            <label class="solcalc-lead-label" for="leadArea">שטח גג משוער (מ"ר)</label>
+            <input class="solcalc-lead-input" type="number" id="leadArea" name="leadArea" placeholder="לדוגמה: 100" min="10">
+          </div>
+
+          <div class="solcalc-lead-error" id="leadError" role="alert" aria-live="polite" hidden="">
+            <span>⚠️</span> אנא מלא את כל השדות הנדרשים.
+          </div>
+
+          <button class="solcalc-btn-submit" type="button" id="submitLead" aria-label="שלח בקשה לבדיקת כדאיות">
+            <span class="solcalc-btn-icon">✅</span>
+            שלח ואקבל בדיקה חינם
+          </button>
+
+          <p class="solcalc-lead-privacy">🔒 פרטיך מאובטחים ולא יועברו לצד שלישי</p>
+        </form>
+
+        <!-- Success State -->
+        <div class="solcalc-lead-success" id="leadSuccess" hidden="">
+          <div class="solcalc-success-icon">🎉</div>
+          <h4 class="solcalc-success-title">תודה! קיבלנו את פנייתך</h4>
+          <p class="solcalc-success-text">מומחה סולגג יחזור אליך תוך 24 שעות עם הצעה מותאמת אישית.</p>
+          <button class="solcalc-btn-close-success" type="button" id="closeSuccess">סגור</button>
+        </div>
+      </div>
+    </div><!-- /.solcalc-modal-overlay -->
+
+  </div><!-- /.solcalc-container -->
+</section>
+
+<footer class="site-footer" dir="rtl">
   <div class="footer-top">
     <div class="footer-container">
       <div class="footer-grid">
