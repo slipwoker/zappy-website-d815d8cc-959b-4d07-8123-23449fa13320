@@ -1530,6 +1530,130 @@
 
 </section>
 
+<script>
+(function() {
+  'use strict';
+
+  // Direction multipliers by roof type and direction
+  var ROOF_TYPE_FACTOR = { flat: 1.0, tiles: 0.93 };
+  var DIR_FACTOR = { south: 1.0, 'east-west': 0.92, north: 0.80 };
+
+  function fmt(n, decimals) {
+    return n.toLocaleString('he-IL', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  }
+
+  function calc() {
+    var area     = parseFloat(document.getElementById('sc-roofArea').value);
+    var roofType = document.getElementById('sc-roofType').value;
+    var dir      = document.getElementById('sc-roofDir').value;
+    var bill     = parseFloat(document.getElementById('sc-bill').value);
+    var errEl    = document.getElementById('sc-error');
+    var resEl    = document.getElementById('sc-results');
+
+    if (!area || area < 10 || !bill || bill <= 0) {
+      errEl.removeAttribute('hidden');
+      resEl.setAttribute('hidden', '');
+      return;
+    }
+    errEl.setAttribute('hidden', '');
+
+    // ── Core calculations ──
+    var rtFactor  = ROOF_TYPE_FACTOR[roofType] || 1.0;
+    var dirFactor = DIR_FACTOR[dir] || 1.0;
+
+    var systemKW   = Math.round((area / 6.7) * rtFactor * dirFactor * 10) / 10;
+    var annualKWh  = Math.round(systemKW * 1584);
+    var annualSavingNIS = bill * 12;         // annual saving = monthly bill * 12
+    var systemCost = Math.round(systemKW * 3060);
+    var co2        = Math.round(systemKW * 0.515 * 10) / 10;
+    var roi        = annualSavingNIS > 0 ? Math.round((annualSavingNIS / systemCost) * 1000) / 10 : 0;
+    var payback    = annualSavingNIS > 0 ? Math.round((systemCost / annualSavingNIS) * 10) / 10 : 0;
+
+    // ── Populate result cards ──
+    document.getElementById('sc-res-size').textContent    = fmt(systemKW, 1);
+    document.getElementById('sc-res-cost').textContent    = fmt(systemCost, 0);
+    document.getElementById('sc-res-output').textContent  = fmt(annualKWh, 0);
+    document.getElementById('sc-res-roi').textContent     = fmt(roi, 1);
+    document.getElementById('sc-res-payback').textContent = fmt(payback, 1);
+    document.getElementById('sc-res-co2').textContent     = fmt(co2, 1);
+
+    resEl.removeAttribute('hidden');
+    resEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ── Modal logic ──
+  function openModal() {
+    var modal = document.getElementById('sc-modal');
+    if (modal) modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    // Pre-fill roof area if available
+    var area = document.getElementById('sc-roofArea').value;
+    var leadArea = document.getElementById('sc-leadArea');
+    if (area && leadArea) leadArea.value = area;
+  }
+
+  function closeModal() {
+    var modal = document.getElementById('sc-modal');
+    if (modal) modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  function submitLead() {
+    var name  = (document.getElementById('sc-leadName').value || '').trim();
+    var phone = (document.getElementById('sc-leadPhone').value || '').trim();
+    var city  = (document.getElementById('sc-leadCity').value || '').trim();
+    var errEl = document.getElementById('sc-leadError');
+
+    if (!name || !phone || !city) {
+      errEl.removeAttribute('hidden');
+      return;
+    }
+    errEl.setAttribute('hidden', '');
+
+    // Hide form, show success
+    document.getElementById('sc-modalBody').setAttribute('hidden', '');
+    document.getElementById('sc-leadSuccess').removeAttribute('hidden');
+  }
+
+  // ── Attach listeners on DOM ready ──
+  function init() {
+    var calcBtn   = document.getElementById('sc-calcBtn');
+    var openBtn   = document.getElementById('sc-openLead');
+    var closeBtn  = document.getElementById('sc-closeModal');
+    var submitBtn = document.getElementById('sc-submitLead');
+    var closeOk   = document.getElementById('sc-closeSuccess');
+    var overlay   = document.getElementById('sc-modal');
+
+    if (calcBtn)   calcBtn.addEventListener('click', calc);
+    if (openBtn)   openBtn.addEventListener('click', openModal);
+    if (closeBtn)  closeBtn.addEventListener('click', closeModal);
+    if (submitBtn) submitBtn.addEventListener('click', submitLead);
+    if (closeOk)   closeOk.addEventListener('click', closeModal);
+
+    // Close on overlay click
+    if (overlay) {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeModal();
+      });
+    }
+
+    // Enter key on inputs
+    ['sc-roofArea','sc-bill'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') calc();
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
 <footer class="site-footer" dir="rtl">
   <div class="footer-top">
     <div class="footer-container">
