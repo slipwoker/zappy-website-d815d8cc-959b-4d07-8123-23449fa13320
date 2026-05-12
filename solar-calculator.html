@@ -249,6 +249,433 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.solar-calculator-formula-steps-section {
+  direction: rtl;
+  background-color: #111111;
+  background-image: linear-gradient(180deg, #111111 0%, #0D0D0D 100%);
+  color: var(--text-light);
+  padding: 80px 20px 60px;
+  position: relative;
+  overflow: visible;
+  font-family: 'Heebo', 'Assistant', 'Rubik', sans-serif;
+}
+
+/* Container */
+.solar-calculator-formula-steps-section .scfs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── HEADER ── */
+.solar-calculator-formula-steps-section .scfs-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.solar-calculator-formula-steps-section .scfs-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #111111;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.solar-calculator-formula-steps-section .scfs-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-light);
+  line-height: 1.2;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.solar-calculator-formula-steps-section .scfs-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ── STEPS ── */
+.solar-calculator-formula-steps-section .scfs-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 60px;
+}
+
+/* Individual Step Row */
+.solar-calculator-formula-steps-section .scfs-step {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0 28px;
+  align-items: start;
+  padding: 28px 32px;
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  position: relative;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.solar-calculator-formula-steps-section .scfs-step:hover {
+  background: rgba(255,216,0,0.05);
+  border-color: rgba(255,216,0,0.3);
+}
+
+.solar-calculator-formula-steps-section .scfs-step--highlight {
+  border-color: var(--primary);
+  background: rgba(255,216,0,0.06);
+  box-shadow: 0 0 32px rgba(245,200,0,0.15);
+}
+
+/* Step Number */
+.solar-calculator-formula-steps-section .scfs-step-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  padding-top: 4px;
+  text-align: center;
+  font-family: 'Heebo', sans-serif;
+  opacity: 0.9;
+}
+
+.solar-calculator-formula-steps-section .scfs-step-number--final {
+  opacity: 1;
+  text-shadow: 0 0 24px rgba(255,216,0,0.5);
+}
+
+/* Step Content */
+.solar-calculator-formula-steps-section .scfs-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.solar-calculator-formula-steps-section .scfs-step-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.solar-calculator-formula-steps-section .scfs-step-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* Formula Pill */
+.solar-calculator-formula-steps-section .scfs-formula-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 6px 14px;
+  flex-shrink: 0;
+}
+
+.solar-calculator-formula-steps-section .scfs-formula-pill code {
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 0.82rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  background: none;
+  padding: 0;
+}
+
+.solar-calculator-formula-steps-section .scfs-formula-pill--gold {
+  background: rgba(255,216,0,0.12);
+  border-color: var(--primary);
+}
+
+.solar-calculator-formula-steps-section .scfs-formula-pill--gold code {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.solar-calculator-formula-steps-section .scfs-formula-icon {
+  color: var(--primary);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Step Description */
+.solar-calculator-formula-steps-section .scfs-step-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin: 0;
+  text-align: right;
+}
+
+/* Connector between steps */
+.solar-calculator-formula-steps-section .scfs-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0;
+  position: relative;
+}
+
+.solar-calculator-formula-steps-section .scfs-connector-line {
+  width: 1px;
+  height: 20px;
+  background: linear-gradient(to bottom, var(--primary), rgba(255,216,0,0.3));
+}
+
+.solar-calculator-formula-steps-section .scfs-connector-arrow {
+  color: var(--primary);
+  font-size: 0.65rem;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* ── BOTTOM ROW ── */
+.solar-calculator-formula-steps-section .scfs-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Image Block */
+.solar-calculator-formula-steps-section .scfs-image-block {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 3/2;
+}
+
+.solar-calculator-formula-steps-section .scfs-image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.solar-calculator-formula-steps-section .scfs-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 100%);
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.solar-calculator-formula-steps-section .scfs-image-badge {
+  position: absolute;
+  bottom: 20px;
+  inset-inline-start: 20px;
+  background: var(--primary);
+  border-radius: 8px;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 8px 24px rgba(255,216,0,0.4);
+}
+
+.solar-calculator-formula-steps-section .scfs-image-badge-number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #111111;
+  line-height: 1;
+  font-family: 'Heebo', sans-serif;
+}
+
+.solar-calculator-formula-steps-section .scfs-image-badge-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #111111;
+  text-align: center;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* CTA Block */
+.solar-calculator-formula-steps-section .scfs-cta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: right;
+}
+
+.solar-calculator-formula-steps-section .scfs-cta-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.solar-calculator-formula-steps-section .scfs-cta-heading {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text-light);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.solar-calculator-formula-steps-section .scfs-cta-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Stats Row */
+.solar-calculator-formula-steps-section .scfs-stats-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  padding-top: 8px;
+  flex-wrap: wrap;
+}
+
+.solar-calculator-formula-steps-section .scfs-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-inline-start: 3px solid var(--primary);
+  padding-inline-start: 14px;
+}
+
+.solar-calculator-formula-steps-section .scfs-stat-value {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  font-family: 'Heebo', sans-serif;
+}
+
+.solar-calculator-formula-steps-section .scfs-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ── FOOTNOTE ── */
+.solar-calculator-formula-steps-section .scfs-footnote {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.6;
+  border-top: 1px solid var(--border-dark);
+  padding-top: 20px;
+  margin: 0;
+  text-align: right;
+}
+
+/* ── DESKTOP ENHANCEMENTS ── */
+@media (min-width: 768px) {
+  .solar-calculator-formula-steps-section {
+    padding: 100px 40px 80px;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-title {
+    font-size: 2.5rem;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-step {
+    grid-template-columns: 100px 1fr;
+  }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 767px) {
+  .solar-calculator-formula-steps-section {
+    padding: 60px 16px 48px;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-header {
+    margin-bottom: 36px;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-title {
+    font-size: 1.6rem;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-step {
+    grid-template-columns: 64px 1fr;
+    gap: 0 16px;
+    padding: 20px 16px;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-step-number {
+    font-size: 2.4rem;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-step-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-step-title {
+    font-size: 1.1rem;
+    white-space: normal;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-formula-pill {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-formula-pill code {
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-bottom-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-cta-heading {
+    font-size: 1.3rem;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-stats-row {
+    gap: 16px;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-stat-value {
+    font-size: 1.2rem;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-image-badge {
+    padding: 8px 12px;
+  }
+
+  .solar-calculator-formula-steps-section .scfs-image-badge-number {
+    font-size: 1.5rem;
+  }
+}
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -1073,160 +1500,128 @@
 
 <section class="solar-calculator-formula-steps-section" data-layout-spec="מחשבון סולארי-formula-steps" dir="rtl" id="zappy-section-0">
   <div class="scfs-container">
+
     <!-- Section Header -->
     <div class="scfs-header">
-      <p class="zappy-editable"><span class="scfs-label">המתודולוגיה שלנו</span>
-      </p><h2 class="scfs-title">איך מחשבים את גודל המערכת הסולארית?</h2>
-      <p class="scfs-subtitle">ארבעה שלבים פשוטים — מנתוני הצריכה שלך ועד להמלצה מדויקת על גודל המערכת</p>
+      <span class="scfs-badge">הנוסחה שלנו</span>
+      <h2 class="scfs-title">כיצד מחשבים את החיסכון שלך?</h2>
+      <p class="scfs-subtitle">ארבעה שלבים פשוטים — מסך גג ריק להכנסה סולארית אמיתית. כל שלב מבוסס על נתוני ייצור אמיתיים מהשוק הישראלי.</p>
     </div>
 
-    <!-- Steps Row -->
-    <div class="scfs-steps-row">
+    <!-- Steps -->
+    <div class="scfs-steps">
 
-      <!-- Step 1 -->
-      <article class="scfs-step-card">
+      <!-- Step 01 -->
+      <div class="scfs-step">
         <div class="scfs-step-number">01</div>
         <div class="scfs-step-content">
-          <div class="scfs-formula-badge">
-            <span class="scfs-formula-text">כמות פאנלים ראשונית</span>
+          <div class="scfs-step-top">
+            <h3 class="scfs-step-title">שטח הגג הזמין</h3>
+            <div class="scfs-formula-pill">
+              <span class="scfs-formula-icon"><i class="fa fa-ruler-combined"></i></span>
+              <code>שטח_גג (מ"ר) × יחס_ניצול (0.7)</code>
+            </div>
           </div>
-          <h3 class="scfs-step-title">ספירת פאנלים</h3>
-          <div class="scfs-formula-block">
-            <span class="scfs-formula-eq">שטח הגג ÷ 6.71 מ"ר</span>
-          </div>
-          <p class="scfs-step-desc">חישוב כמות הפאנלים האפשרית לפי שטח הגג הזמין, תוך התחשבות בתצורה ובמרווחים הנדרשים בין הפאנלים.</p>
+          <p class="scfs-step-desc">מחשבים את שטח הגג הנטו לאחר הסרת שטחים לא שמישים — צינורות, מזגנים, מרחקי בטיחות וכיווני גג שאינם מתאימים לפנלים. בממוצע, 70% מהשטח הברוטו הוא שטח ניתן להתקנה.</p>
         </div>
-        <div class="scfs-step-icon" aria-hidden="true">
-          <svg data-no-icon-edit="true" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="6" width="12" height="8" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-            <rect x="18" y="6" width="12" height="8" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-            <rect x="2" y="18" width="12" height="8" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-            <rect x="18" y="18" width="12" height="8" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-            <line x1="8" y1="6" x2="8" y2="14" stroke="currentColor" stroke-width="1"></line>
-            <line x1="24" y1="6" x2="24" y2="14" stroke="currentColor" stroke-width="1"></line>
-            <line x1="8" y1="18" x2="8" y2="26" stroke="currentColor" stroke-width="1"></line>
-            <line x1="24" y1="18" x2="24" y2="26" stroke="currentColor" stroke-width="1"></line>
-          </svg>
-        </div>
-      </article>
-
-      <!-- Connector -->
-      <div class="scfs-connector" aria-hidden="true">
-        <div class="scfs-connector-line"></div>
-        <svg data-no-icon-edit="true" width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0 L10 8 L0 16" stroke="var(--primary)" stroke-width="2" fill="none"></path>
-        </svg>
       </div>
 
-      <!-- Step 2 -->
-      <article class="scfs-step-card">
+      <div class="scfs-connector">
+        <div class="scfs-connector-line"></div>
+        <div class="scfs-connector-arrow"><i class="fa fa-chevron-down"></i></div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="scfs-step">
         <div class="scfs-step-number">02</div>
         <div class="scfs-step-content">
-          <div class="scfs-formula-badge">
-            <span class="scfs-formula-text">גודל מערכת מחושב</span>
+          <div class="scfs-step-top">
+            <h3 class="scfs-step-title">הספק המערכת</h3>
+            <div class="scfs-formula-pill">
+              <span class="scfs-formula-icon"><i class="fa fa-solar-panel"></i></span>
+              <code>שטח_נטו ÷ 6.5 מ"ר = קילוואט-פיק (kWp)</code>
+            </div>
           </div>
-          <h3 class="scfs-step-title">עוצמת המערכת</h3>
-          <div class="scfs-formula-block">
-            <span class="scfs-formula-eq">מספר פאנלים × 0.4 kW</span>
-          </div>
-          <p class="scfs-step-desc">כל פאנל תקני מייצר כ־400 וואט. כפל מספר הפאנלים בעוצמת פאנל בודד לקבלת הספק המערכת הכולל בקילוואט.</p>
+          <p class="scfs-step-desc">כל פנל סטנדרטי (400W) תופס כ-6.5 מ"ר. כך מחשבים את הספק המערכת בקילוואט-פיק — יחידת המידה הסטנדרטית לעוצמת מערכת פוטו-וולטאית. מערכת ביתית טיפוסית נעה בין 8 ל-20 kWp.</p>
         </div>
-        <div class="scfs-step-icon" aria-hidden="true">
-          <svg data-no-icon-edit="true" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"></circle>
-            <path d="M16 8 L18 14 L24 14 L19 18 L21 24 L16 20 L11 24 L13 18 L8 14 L14 14 Z" stroke="currentColor" stroke-width="1.2" fill="none"></path>
-          </svg>
-        </div>
-      </article>
-
-      <!-- Connector -->
-      <div class="scfs-connector" aria-hidden="true">
-        <div class="scfs-connector-line"></div>
-        <svg data-no-icon-edit="true" width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0 L10 8 L0 16" stroke="var(--primary)" stroke-width="2" fill="none"></path>
-        </svg>
       </div>
 
-      <!-- Step 3 -->
-      <article class="scfs-step-card">
+      <div class="scfs-connector">
+        <div class="scfs-connector-line"></div>
+        <div class="scfs-connector-arrow"><i class="fa fa-chevron-down"></i></div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="scfs-step">
         <div class="scfs-step-number">03</div>
         <div class="scfs-step-content">
-          <div class="scfs-formula-badge">
-            <span class="scfs-formula-text">גודל מערכת מומלץ</span>
+          <div class="scfs-step-top">
+            <h3 class="scfs-step-title">ייצור שנתי</h3>
+            <div class="scfs-formula-pill">
+              <span class="scfs-formula-icon"><i class="fa fa-bolt"></i></span>
+              <code>kWp × 1,550 שעות_שמש = kWh/שנה</code>
+            </div>
           </div>
-          <h3 class="scfs-step-title">עיגול לגודל סטנדרטי</h3>
-          <div class="scfs-formula-block">
-            <span class="scfs-formula-eq">עיגול ל־5, 10, 15, 20 kW</span>
-          </div>
-          <p class="scfs-step-desc">מערכות סולאריות מיוצרות בגדלים סטנדרטיים. מעגלים את הגודל המחושב לאפשרות הקרובה ביותר לצורך תכנון מקצועי ואישורי חברת חשמל.</p>
+          <p class="scfs-step-desc">ישראל מובילה בעולם בשעות קרינה שנתיות — ממוצע של 1,550 שעות שמש אפקטיביות בשנה. כפולה בהספק המערכת, מקבלים את כמות החשמל שהמערכת תייצר בפועל מדי שנה, בקילוואט-שעה.</p>
         </div>
-        <div class="scfs-step-icon" aria-hidden="true">
-          <svg data-no-icon-edit="true" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="20" width="6" height="9" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-            <rect x="13" y="14" width="6" height="15" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-            <rect x="23" y="8" width="6" height="21" rx="1" stroke="currentColor" stroke-width="1.5"></rect>
-            <polyline points="4,18 10,12 16,15 26,6" stroke="var(--primary)" stroke-width="2" fill="none"></polyline>
-            <circle cx="26" cy="6" r="2" fill="var(--primary)"></circle>
-          </svg>
-        </div>
-      </article>
-
-      <!-- Connector -->
-      <div class="scfs-connector" aria-hidden="true">
-        <div class="scfs-connector-line"></div>
-        <svg data-no-icon-edit="true" width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0 L10 8 L0 16" stroke="var(--primary)" stroke-width="2" fill="none"></path>
-        </svg>
       </div>
 
-      <!-- Step 4 -->
-      <article class="scfs-step-card scfs-step-card--accent">
-        <div class="scfs-step-number scfs-step-number--accent">04</div>
+      <div class="scfs-connector">
+        <div class="scfs-connector-line"></div>
+        <div class="scfs-connector-arrow"><i class="fa fa-chevron-down"></i></div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="scfs-step scfs-step--highlight">
+        <div class="scfs-step-number scfs-step-number--final">04</div>
         <div class="scfs-step-content">
-          <div class="scfs-formula-badge scfs-formula-badge--accent">
-            <span class="scfs-formula-text">תפוקה חודשית משוערת</span>
+          <div class="scfs-step-top">
+            <h3 class="scfs-step-title">חיסכון כספי שנתי</h3>
+            <div class="scfs-formula-pill scfs-formula-pill--gold">
+              <span class="scfs-formula-icon"><i class="fa fa-shekel-sign"></i></span>
+              <code>kWh/שנה × תעריף_חשמל = ₪ לשנה</code>
+            </div>
           </div>
-          <h3 class="scfs-step-title">ייצור חשמל חודשי</h3>
-          <div class="scfs-formula-block scfs-formula-block--accent">
-            <span class="scfs-formula-eq">גודל מערכת × 1,584 kWh שנתי</span>
-          </div>
-          <p class="scfs-step-desc">ממוצע ייצור חשמל שנתי בישראל עומד על כ־1,584 קוט"ש לכל קילוואט מותקן (כ־132 kWh לחודש). זהו הבסיס לחישוב החיסכון וההחזר השנתי הצפוי.</p>
+          <p class="scfs-step-desc">מכפילים את הייצור השנתי בתעריף החשמל הנוכחי של חברת החשמל (כ-0.65 ₪/kWh למגזר הביתי). התוצאה היא החיסכון הגולמי השנתי — לפני ניכוי עלות המערכת. רוב הלקוחות מחזירים את ההשקעה תוך 5–7 שנים.</p>
         </div>
-        <div class="scfs-step-icon scfs-step-icon--accent" aria-hidden="true">
-          <svg data-no-icon-edit="true" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.5"></circle>
-            <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"></line>
-            <line x1="16" y1="26" x2="16" y2="30" stroke="currentColor" stroke-width="2"></line>
-            <line x1="2" y1="16" x2="6" y2="16" stroke="currentColor" stroke-width="2"></line>
-            <line x1="26" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="2"></line>
-            <line x1="6.34" y1="6.34" x2="9.17" y2="9.17" stroke="currentColor" stroke-width="1.5"></line>
-            <line x1="22.83" y1="22.83" x2="25.66" y2="25.66" stroke="currentColor" stroke-width="1.5"></line>
-            <line x1="25.66" y1="6.34" x2="22.83" y2="9.17" stroke="currentColor" stroke-width="1.5"></line>
-            <line x1="9.17" y1="22.83" x2="6.34" y2="25.66" stroke="currentColor" stroke-width="1.5"></line>
-          </svg>
-        </div>
-      </article>
+      </div>
 
     </div>
 
-    <!-- Bottom Note -->
-    <div class="scfs-footnote">
-      <span class="scfs-footnote-icon" aria-hidden="true">
-        <svg data-no-icon-edit="true" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="8" cy="8" r="7" stroke="var(--primary)" stroke-width="1.5"></circle>
-          <line x1="8" y1="7" x2="8" y2="12" stroke="var(--primary)" stroke-width="1.5"></line>
-          <circle cx="8" cy="4.5" r="0.75" fill="var(--primary)"></circle>
-        </svg>
-      </span>
-      <p>הנוסחאות מבוססות על תנאי קרינה ממוצעים בישראל. תוצאות המחשבון הן הערכה ראשונית — הצעת מחיר מדויקת תינתן לאחר סקר גג מקצועי ותכנון מערכת סולארית מותאם אישית.</p>
+    <!-- Image + CTA Row -->
+    <div class="scfs-bottom-row">
+      <div class="scfs-image-block">
+        <img data-context="Close-up of a solar energy engineer reviewing calculation data on a tablet, standing on a rooftop with solar panels installed behind them. Israeli residential neighborhood visible in the background. Professional, technical, premium feel. Black and yellow brand colors." width="600" height="400" src="/assets/solgag-section-מחשבון סולארי-formula-steps-solar-calculator-formula-steps-image-1.webp" alt="מהנדס סולגג מחשב תשואה סולארית על גג עם פנלים">
+        <div class="scfs-image-overlay"></div>
+        <div class="scfs-image-badge">
+          <span class="scfs-image-badge-number">5–7</span>
+          <span class="scfs-image-badge-label">שנות החזר השקעה</span>
+        </div>
+      </div>
+      <div class="scfs-cta-block">
+        <p class="scfs-cta-label">מוכן לחשב את הפוטנציאל שלך?</p>
+        <h3 class="scfs-cta-heading">קבל תחשיב מדויק למערכת שלך</h3>
+        <p class="scfs-cta-desc">המחשבון שלנו מבצע את כל ארבעת השלבים בשניות — על בסיס נתוני הגג שלך, צריכת החשמל שלך ותעריפי חברת החשמל העדכניים.</p>
+        <div class="scfs-stats-row">
+          <div class="scfs-stat">
+            <span class="scfs-stat-value">1,550</span>
+            <span class="scfs-stat-label">שעות שמש בשנה</span>
+          </div>
+          <div class="scfs-stat">
+            <span class="scfs-stat-value">25+</span>
+            <span class="scfs-stat-label">שנות אחריות פנל</span>
+          </div>
+          <div class="scfs-stat">
+            <span class="scfs-stat-value">0.65₪</span>
+            <span class="scfs-stat-label">תעריף kWh נוכחי</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- Bottom Divider: transition to next section (pale yellow clipped panel) -->
-  <div class="scfs-divider-wrapper" aria-hidden="true">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1280 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,72 L0,36 L1280,0 L1280,72 Z" fill="#FFFFFF"></path>
-    </svg>
+    <!-- Footnote -->
+    <p class="scfs-footnote">* החישובים מבוססים על ממוצעי קרינה ארציים ותעריפי חברת החשמל לשנת 2024. תוצאות בפועל עשויות להשתנות בהתאם למיקום הגג, זווית ההטיה, הצללות ותנאי מזג אוויר מקומיים. SOLGAG מספקת הצעת מחיר מפורטת ומדויקת לאחר סקר גג מקצועי.</p>
+
   </div>
 </section><section class="solar-calculator-results-preview-section" data-layout-spec="מחשבון סולארי-results-preview" dir="rtl" id="zappy-section-1">
   <div class="scrp-container">
