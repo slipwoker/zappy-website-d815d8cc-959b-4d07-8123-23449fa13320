@@ -792,12 +792,246 @@
   <main>
     
 
-<section class="solar-calculator-formula-steps-section" data-layout-spec="מחשבון סולארי-formula-steps" dir="rtl">
+
+
+
+
+
+  <section class="solcalc-section" id="smart-solar-calc" dir="rtl" lang="he" aria-label="מחשבון סולרי חכם" style="opacity: 1; min-height: 792.167px !important;">
+  <div class="solcalc-wrap">
+
+    <!-- Header -->
+    <div class="solcalc-header">
+      <div class="solcalc-badge-top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-element-type="icon" data-element-id="icon-1778595039883-d5vt90kno" data-icon-type="svg"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        כלי חינמי
+      </div>
+      <h2 class="solcalc-title">מחשבון סולרי חכם</h2>
+      <p class="solcalc-subtitle">הזן את פרטי הגג שלך וקבל הערכה מקצועית — גודל מערכת, עלות, תשואה וחיסכון CO₂ תוך שניות</p>
+    </div>
+
+    <!-- Main Card -->
+    <div class="solcalc-card">
+
+      <!-- Inputs Grid -->
+      <div class="solcalc-inputs-grid zappy-preserve-css-grid" id="zappy-auto-grid-1778595039899-ft8fdx" data-zappy-auto-grid="true" data-original-item-width="383" data-original-gap="20px" style="--zappy-grid-cols: 383.111px 383.111px; grid-template-columns: 383.111px 383.111px; align-items: stretch !important;" data-zappy-explicit-columns="true">
+
+        <div class="solcalc-field" data-grid-item-index="0">
+          <label class="solcalc-label" for="sc-roofArea">
+            <span class="solcalc-label-icon">📐</span>
+            שטח הגג (מ"ר)
+          </label>
+          <input class="solcalc-input" type="number" id="sc-roofArea" name="roofArea" placeholder="לדוגמה: 100" min="10" max="5000" aria-required="true">
+          <span class="solcalc-hint">מינימום 10 מ"ר</span>
+        </div>
+
+        <div class="solcalc-field" data-grid-item-index="1">
+          <label class="solcalc-label" for="sc-roofType">
+            <span class="solcalc-label-icon">🏠</span>
+            סוג הגג
+          </label>
+          <select class="solcalc-select zappy-editable-dropdown" id="sc-roofType" name="roofType" aria-required="true">
+            <option value="flat">גג שטוח</option>
+            <option value="tiles">גג רעפים</option>
+          </select>
+        </div>
+
+        <div class="solcalc-field" data-grid-item-index="2">
+          <label class="solcalc-label" for="sc-roofDir">
+            <span class="solcalc-label-icon">🧭</span>
+            כיוון הגג
+          </label>
+          <select class="solcalc-select zappy-editable-dropdown" id="sc-roofDir" name="roofDirection" aria-required="true">
+            <option value="south">דרום</option>
+            <option value="north">צפון</option>
+            <option value="east-west">מזרח-מערב</option>
+          </select>
+        </div>
+
+        <div class="solcalc-field" data-grid-item-index="3">
+          <label class="solcalc-label" for="sc-bill">
+            <span class="solcalc-label-icon">💡</span>
+            עלות חשמל חודשית (₪)
+          </label>
+          <input class="solcalc-input" type="number" id="sc-bill" name="monthlyBill" placeholder="לדוגמה: 600" min="0" aria-required="true">
+          <span class="solcalc-hint">לחישוב תשואה ו-ROI</span>
+        </div>
+
+      </div>
+
+      <!-- Error -->
+      <div class="solcalc-error" id="sc-error" role="alert" aria-live="polite" hidden="">
+        ⚠️ אנא הזן שטח גג תקין (לפחות 10 מ"ר) ועלות חשמל חודשית כדי לחשב.
+      </div>
+
+      <!-- Calc Button -->
+      <button class="solcalc-btn-calc" type="button" id="sc-calcBtn" aria-label="חשב את הנתונים הסולריים" data-element-type="button" data-element-id="btn-1778595039882-avqcmrxnk" data-native-element="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        חשב עכשיו
+      </button>
+
+      <!-- Results -->
+      <div class="solcalc-results" id="sc-results" hidden="" aria-live="polite" aria-label="תוצאות המחשבון">
+
+        <div class="solcalc-results-header">
+          <div class="solcalc-results-title-row">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <h3 class="solcalc-results-title">תוצאות ההערכה שלך</h3>
+          </div>
+          <p class="solcalc-results-note">הערכה ראשונית — לבדיקה מדויקת פנה לאיש מקצוע</p>
+        </div>
+
+        <div class="solcalc-results-grid" id="zappy-auto-grid-1778595039903-r0wmay" data-zappy-auto-grid="true">
+
+          <div class="solcalc-result-card solcalc-result-card--primary" data-grid-item-index="0">
+            <div class="solcalc-result-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            </div>
+            <div class="solcalc-result-label">גודל מערכת מומלץ</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="sc-res-size">—</span>
+              <span class="solcalc-result-unit">kW</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card solcalc-result-card--orange" data-grid-item-index="1">
+            <div class="solcalc-result-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <div class="solcalc-result-label">עלות מערכת משוערת</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="sc-res-cost">—</span>
+              <span class="solcalc-result-unit">₪</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card solcalc-result-card--blue" data-grid-item-index="2">
+            <div class="solcalc-result-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+            </div>
+            <div class="solcalc-result-label">תפוקה שנתית צפויה</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="sc-res-output">—</span>
+              <span class="solcalc-result-unit">kWh</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card solcalc-result-card--green" data-grid-item-index="3">
+            <div class="solcalc-result-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            </div>
+            <div class="solcalc-result-label">תשואה שנתית</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="sc-res-roi">—</span>
+              <span class="solcalc-result-unit">%</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card solcalc-result-card--navy" data-grid-item-index="4">
+            <div class="solcalc-result-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="solcalc-result-label">החזר השקעה</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="sc-res-payback">—</span>
+              <span class="solcalc-result-unit">שנים</span>
+            </div>
+          </div>
+
+          <div class="solcalc-result-card solcalc-result-card--teal" data-grid-item-index="5">
+            <div class="solcalc-result-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="solcalc-result-label">חיסכון CO₂ שנתי</div>
+            <div class="solcalc-result-value">
+              <span class="solcalc-result-num" id="sc-res-co2">—</span>
+              <span class="solcalc-result-unit">טון</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="solcalc-cta-block">
+          <p class="solcalc-cta-text">רוצה לדעת אם זה כדאי עבורך? קבל בדיקה מקצועית חינם!</p>
+          <button class="solcalc-btn-lead" type="button" id="sc-openLead" aria-label="פתח טופס לבדיקת כדאיות חינם" data-element-type="button" data-element-id="btn-1778595039882-rga39sje1" data-native-element="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 12.7 19.79 19.79 0 0 1 1.06 4.11 2 2 0 0 1 3.04 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"></path></svg>
+            קבל בדיקת כדאיות ללא עלות
+          </button>
+        </div>
+
+      </div><!-- /sc-results -->
+
+    </div><!-- /solcalc-card -->
+
+  </div><!-- /solcalc-wrap -->
+
+  <!-- Lead Modal -->
+  <div class="solcalc-modal-overlay" id="sc-modal" role="dialog" aria-modal="true" aria-labelledby="sc-modalTitle" hidden="">
+    <div class="solcalc-modal">
+      <button class="solcalc-modal-close" id="sc-closeModal" aria-label="סגור טופס" data-element-type="button" data-element-id="btn-1778595039882-iilerp0pq" data-native-element="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="solcalc-modal-body" id="sc-modalBody">
+        <div class="solcalc-modal-header">
+          <div class="solcalc-modal-icon">🎯</div>
+          <h3 class="solcalc-modal-title" id="sc-modalTitle">בדיקת כדאיות ללא עלות</h3>
+          <p class="solcalc-modal-subtitle">מלא את הפרטים ומומחה סולגג יחזור אליך תוך 24 שעות</p>
+        </div>
+
+        <form class="solcalc-lead-form" id="sc-leadForm" novalidate="" aria-label="טופס ליד">
+
+          <div class="solcalc-lead-field">
+            <label class="solcalc-lead-label" for="sc-leadName">שם מלא *</label>
+            <input class="solcalc-lead-input" type="text" id="sc-leadName" name="leadName" placeholder="ישראל ישראלי" autocomplete="name" aria-required="true">
+          </div>
+
+          <div class="solcalc-lead-field">
+            <label class="solcalc-lead-label" for="sc-leadPhone">טלפון *</label>
+            <input class="solcalc-lead-input" type="tel" id="sc-leadPhone" name="leadPhone" placeholder="05X-XXXXXXX" autocomplete="tel" aria-required="true">
+          </div>
+
+          <div class="solcalc-lead-field">
+            <label class="solcalc-lead-label" for="sc-leadCity">עיר *</label>
+            <input class="solcalc-lead-input" type="text" id="sc-leadCity" name="leadCity" placeholder="תל אביב" autocomplete="address-level2" aria-required="true">
+          </div>
+
+          <div class="solcalc-lead-field">
+            <label class="solcalc-lead-label" for="sc-leadArea">שטח גג משוער (מ"ר)</label>
+            <input class="solcalc-lead-input" type="number" id="sc-leadArea" name="leadArea" placeholder="לדוגמה: 100" min="10">
+          </div>
+
+          <div class="solcalc-lead-error" id="sc-leadError" role="alert" aria-live="polite" hidden="">
+            ⚠️ אנא מלא שם, טלפון ועיר.
+          </div>
+
+          <button class="solcalc-btn-submit" type="button" id="sc-submitLead" aria-label="שלח בקשה לבדיקת כדאיות" data-element-type="button" data-element-id="btn-1778595039882-1ftwb6afy" data-native-element="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            שלח ואקבל בדיקה חינם
+          </button>
+
+          <p class="solcalc-lead-privacy">🔒 פרטיך מאובטחים ולא יועברו לצד שלישי</p>
+        </form>
+      </div>
+
+      <!-- Success -->
+      <div class="solcalc-lead-success" id="sc-leadSuccess" hidden="">
+        <div class="solcalc-success-icon">🎉</div>
+        <h4 class="solcalc-success-title">תודה! קיבלנו את פנייתך</h4>
+        <p class="solcalc-success-text">מומחה סולגג יחזור אליך תוך 24 שעות עם הצעה מותאמת אישית.</p>
+        <button class="solcalc-btn-close-ok" type="button" id="sc-closeSuccess" data-element-type="button" data-element-id="btn-1778595039882-los3a2czb" data-native-element="true">סגור</button>
+      </div>
+
+    </div>
+  </div><!-- /modal -->
+
+</section><section class="solar-calculator-formula-steps-section" data-layout-spec="מחשבון סולארי-formula-steps" dir="rtl" id="zappy-section-0">
   <div class="scfs-container">
     <!-- Section Header -->
     <div class="scfs-header">
-      <span class="scfs-label">המתודולוגיה שלנו</span>
-      <h2 class="scfs-title">איך מחשבים את גודל המערכת הסולארית?</h2>
+      <p class="zappy-editable"><span class="scfs-label">המתודולוגיה שלנו</span>
+      </p><h2 class="scfs-title">איך מחשבים את גודל המערכת הסולארית?</h2>
       <p class="scfs-subtitle">ארבעה שלבים פשוטים — מנתוני הצריכה שלך ועד להמלצה מדויקת על גודל המערכת</p>
     </div>
 
@@ -949,9 +1183,7 @@
       <path d="M0,72 L0,36 L1280,0 L1280,72 Z" fill="#FFFFFF"></path>
     </svg>
   </div>
-</section>
-
-<section class="solar-calculator-results-preview-section" data-layout-spec="מחשבון סולארי-results-preview" dir="rtl">
+</section><section class="solar-calculator-results-preview-section" data-layout-spec="מחשבון סולארי-results-preview" dir="rtl" id="zappy-section-1">
   <div class="scrp-container">
 
     <!-- Content Column -->
@@ -964,7 +1196,7 @@
       <p class="scrp-body">המחשבון שלנו מייצר הערכה מהנדסית ראשונית המבוססת על נתוני הגג, צריכת החשמל ומיקום הנכס שלך. הנתונים מוצגים כתחזית מקצועית — לא כהבטחה שיווקית.</p>
 
       <ul class="scrp-guide-list">
-        <li class="scrp-guide-item">
+        <li class="scrp-guide-item zappy-grid-item-nested-grid" data-grid-item-index="0">
           <div class="scrp-guide-icon">
             <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
           </div>
@@ -973,7 +1205,7 @@
             <span>מחושב לפי שטח הגג הזמין ואחוז הצל</span>
           </div>
         </li>
-        <li class="scrp-guide-item">
+        <li class="scrp-guide-item zappy-grid-item-nested-grid" data-grid-item-index="1">
           <div class="scrp-guide-icon">
             <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           </div>
@@ -982,7 +1214,7 @@
             <span>קילוואט-פיק (kWp) — עוצמת המערכת הנדרשת לצריכה שלך</span>
           </div>
         </li>
-        <li class="scrp-guide-item">
+        <li class="scrp-guide-item zappy-grid-item-nested-grid" data-grid-item-index="2">
           <div class="scrp-guide-icon">
             <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
           </div>
@@ -991,7 +1223,7 @@
             <span>קילוואט-שעה (kWh) — כמות האנרגיה שתייצר בממוצע לחודש</span>
           </div>
         </li>
-        <li class="scrp-guide-item">
+        <li class="scrp-guide-item zappy-grid-item-nested-grid" data-grid-item-index="3">
           <div class="scrp-guide-icon">
             <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
           </div>
@@ -1018,9 +1250,9 @@
 
         <div class="scrp-card-divider"></div>
 
-        <div class="scrp-metrics-grid">
+        <div class="scrp-metrics-grid zappy-preserve-css-grid" id="zappy-auto-grid-1778595039892-u3lu63" data-zappy-auto-grid="true" data-original-item-width="241" data-original-gap="20px" style="--zappy-grid-cols: 241.111px 241.111px; grid-template-columns: 241.111px 241.111px; align-items: stretch !important;" data-zappy-explicit-columns="true">
 
-          <div class="scrp-metric">
+          <div class="scrp-metric" data-grid-item-index="0">
             <div class="scrp-metric-label">מספר פאנלים מוערך</div>
             <div class="scrp-metric-value">18–22
               <span class="scrp-metric-unit">פאנלים</span>
@@ -1030,7 +1262,7 @@
             </div>
           </div>
 
-          <div class="scrp-metric">
+          <div class="scrp-metric" data-grid-item-index="1">
             <div class="scrp-metric-label">גודל מערכת מומלץ</div>
             <div class="scrp-metric-value scrp-metric-highlight">10.5
               <span class="scrp-metric-unit">kWp</span>
@@ -1040,7 +1272,7 @@
             </div>
           </div>
 
-          <div class="scrp-metric">
+          <div class="scrp-metric" data-grid-item-index="2">
             <div class="scrp-metric-label">ייצור חודשי משוער</div>
             <div class="scrp-metric-value">1,470
               <span class="scrp-metric-unit">kWh / חודש</span>
@@ -1050,7 +1282,7 @@
             </div>
           </div>
 
-          <div class="scrp-metric">
+          <div class="scrp-metric" data-grid-item-index="3">
             <div class="scrp-metric-label">חיסכון חודשי מוערך</div>
             <div class="scrp-metric-value scrp-metric-highlight">₪ 680–820
               <span class="scrp-metric-unit">לחודש</span>
@@ -1069,12 +1301,12 @@
           <span>הנתונים הם הערכה ראשונית בלבד. לתכנון מדויק נדרש סקר מהנדסי</span>
         </div>
 
-        <a href="#contact" class="scrp-cta-btn">
+        <p class="zappy-editable"><a href="#contact" class="scrp-cta-btn" data-element-type="button" data-element-id="btn-1778595039881-i2pd0i10s" data-native-element="true">
           <span>קבל סקירה מדויקת ממהנדס סולגג</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
         </a>
 
-        <p class="scrp-cta-sub">ללא עלות · ללא התחייבות · מענה תוך 24 שעות</p>
+        </p><p class="scrp-cta-sub">ללא עלות · ללא התחייבות · מענה תוך 24 שעות</p>
       </div>
     </div>
 
@@ -1086,31 +1318,29 @@
       <path d="M0,72 L0,36 Q160,20 320,32 T640,24 Q800,16 960,30 T1280,22 L1280,72 Z" fill="#111111"></path>
     </svg>
   </div>
-</section>
-
-<section class="solar-calculator-contact-section" data-layout-spec="מחשבון סולארי-contact" dir="rtl">
+</section><section class="solar-calculator-contact-section" data-layout-spec="מחשבון סולארי-contact" dir="rtl" id="zappy-section-2">
   <div class="scc-container">
     <div class="scc-header">
-      <span class="scc-eyebrow">צרו קשר</span>
-      <h2 class="scc-title">רוצים הערכה מדויקת יותר לגג שלכם?</h2>
+      <p class="zappy-editable"><span class="scc-eyebrow">צרו קשר</span>
+      </p><h2 class="scc-title">רוצים הערכה מדויקת יותר לגג שלכם?</h2>
       <p class="scc-subtitle">המחשבון מספק אומדן ראשוני — אבל הצוות המקצועי שלנו יכול לבצע בדיקה מדויקת בהתאם לגג, למיקום ולסוג הנכס שלכם. השאירו פרטים ונחזור אליכם בהקדם.</p>
     </div>
     <div class="scc-form-wrapper">
       <form class="contact-form scc-form" novalidate="">
-        <div class="scc-fields-grid">
-          <div class="scc-field-group">
+        <div class="scc-fields-grid zappy-preserve-css-grid" id="zappy-auto-grid-1778595039896-n96ipv" data-zappy-auto-grid="true" data-original-item-width="379" data-original-gap="20px" style="--zappy-grid-cols: 379.111px 379.111px; grid-template-columns: 379.111px 379.111px; align-items: stretch !important;" data-zappy-explicit-columns="true">
+          <div class="scc-field-group" data-grid-item-index="0">
             <label class="scc-label" for="scc-name">שם מלא</label>
             <input class="scc-input" type="text" id="scc-name" name="name" placeholder="ישראל ישראלי" required="">
           </div>
-          <div class="scc-field-group">
+          <div class="scc-field-group" data-grid-item-index="1">
             <label class="scc-label" for="scc-phone">טלפון</label>
             <input class="scc-input" type="tel" id="scc-phone" name="phone" placeholder="05X-XXX-XXXX" required="">
           </div>
-          <div class="scc-field-group">
+          <div class="scc-field-group" data-grid-item-index="2">
             <label class="scc-label" for="scc-email">אימייל</label>
             <input class="scc-input" type="email" id="scc-email" name="email" placeholder="israel@example.com" required="">
           </div>
-          <div class="scc-field-group scc-field-full">
+          <div class="scc-field-group scc-field-full" data-grid-item-index="3">
             <label class="scc-label" for="scc-message">הודעה</label>
             <textarea class="scc-input scc-textarea" id="scc-message" name="message" rows="4" placeholder="ניתן לציין: שטח הגג (במ&quot;ר), עיר, סוג הנכס (בית פרטי / עסק / מחסן)..."></textarea>
           </div>
@@ -1122,7 +1352,7 @@
           </label>
         </div>
         <div class="scc-submit-row">
-          <button type="submit" class="scc-submit-btn">
+          <button type="submit" class="scc-submit-btn" data-element-type="button" data-element-id="btn-1778595039881-nupzd05sh" data-native-element="true">
             <span>שלחו את הפרטים</span>
             <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
           </button>
@@ -1133,25 +1363,25 @@
     <div class="scc-hours-block" data-element-id="element-ai-1778444484939-h7r3kp" data-element-type="business-hours" aria-label="שעות פעילות">
       <h3 class="scc-hours-title" style="color: #FFFFFF">שעות פעילות</h3>
       <ul class="scc-hours-list">
-        <li class="scc-hours-item" style="color: #FFFFFF">
+        <li class="scc-hours-item" style="color: #FFFFFF" data-grid-item-index="0">
           <span class="scc-hours-day">יום ראשון:</span>&nbsp;<span class="scc-hours-time">08:00 - 17:00</span>
         </li>
-        <li class="scc-hours-item" style="color: #FFFFFF">
+        <li class="scc-hours-item" style="color: #FFFFFF" data-grid-item-index="1">
           <span class="scc-hours-day">יום שני:</span>&nbsp;<span class="scc-hours-time">08:00 - 17:00</span>
         </li>
-        <li class="scc-hours-item" style="color: #FFFFFF">
+        <li class="scc-hours-item" style="color: #FFFFFF" data-grid-item-index="2">
           <span class="scc-hours-day">יום שלישי:</span>&nbsp;<span class="scc-hours-time">08:00 - 17:00</span>
         </li>
-        <li class="scc-hours-item" style="color: #FFFFFF">
+        <li class="scc-hours-item" style="color: #FFFFFF" data-grid-item-index="3">
           <span class="scc-hours-day">יום רביעי:</span>&nbsp;<span class="scc-hours-time">08:00 - 17:00</span>
         </li>
-        <li class="scc-hours-item" style="color: #FFFFFF">
+        <li class="scc-hours-item" style="color: #FFFFFF" data-grid-item-index="4">
           <span class="scc-hours-day">יום חמישי:</span>&nbsp;<span class="scc-hours-time">08:00 - 17:00</span>
         </li>
-        <li class="scc-hours-item" style="color: #FFFFFF">
+        <li class="scc-hours-item" style="color: #FFFFFF" data-grid-item-index="5">
           <span class="scc-hours-day">יום שישי:</span>&nbsp;<span class="scc-hours-time scc-hours-closed">סגור</span>
         </li>
-        <li class="scc-hours-item" style="color: #FFFFFF">
+        <li class="scc-hours-item" style="color: #FFFFFF" data-grid-item-index="6">
           <span class="scc-hours-day">יום שבת:</span>&nbsp;<span class="scc-hours-time">09:00 - 17:00</span>
         </li>
       </ul>
@@ -1159,8 +1389,7 @@
 
   </div>
   <div class="scc-accent-bar" aria-hidden="true"></div>
-</section>
-  </main>
+</section></main>
   
   
 
