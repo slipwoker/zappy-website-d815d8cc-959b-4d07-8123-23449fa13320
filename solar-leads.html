@@ -2428,6 +2428,144 @@
 
 </section>
 
+<section class="solcalc-section" id="smart-solar-calc-leads" dir="rtl" lang="he" aria-label="מחשבון סולרי חכם">
+  <div class="solcalc-wrap">
+    <div class="solcalc-header">
+      <div class="solcalc-badge-top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        כלי חינמי
+      </div>
+      <h2 class="solcalc-title">מחשבון סולרי חכם</h2>
+      <p class="solcalc-subtitle">הזן את פרטי הגג שלך וקבל הערכה מקצועית — גודל מערכת, עלות, תשואה וחיסכון CO₂ תוך שניות</p>
+    </div>
+    <div class="solcalc-card">
+      <div class="solcalc-inputs-grid" id="solcalc-leads-inputs-grid" style="--zappy-grid-cols: repeat(2, 1fr); display:grid; grid-template-columns: repeat(2, 1fr); gap: 20px;" data-zappy-explicit-columns="true">
+        <div class="solcalc-field">
+          <label class="solcalc-label" for="sc2-roofArea"><span class="solcalc-label-icon">📐</span> שטח הגג (מ"ר)</label>
+          <input class="solcalc-input" type="number" id="sc2-roofArea" name="roofArea" placeholder='לדוגמה: 100' min="10" max="5000" aria-required="true">
+          <span class="solcalc-hint">מינימום 10 מ"ר</span>
+        </div>
+        <div class="solcalc-field">
+          <label class="solcalc-label" for="sc2-roofType"><span class="solcalc-label-icon">🏠</span> סוג הגג</label>
+          <select class="solcalc-select" id="sc2-roofType" name="roofType" aria-required="true">
+            <option value="flat">גג שטוח</option>
+            <option value="tiles">גג רעפים</option>
+          </select>
+        </div>
+        <div class="solcalc-field">
+          <label class="solcalc-label" for="sc2-roofDir"><span class="solcalc-label-icon">🧭</span> כיוון הגג</label>
+          <select class="solcalc-select" id="sc2-roofDir" name="roofDirection" aria-required="true">
+            <option value="south">דרום</option>
+            <option value="north">צפון</option>
+            <option value="east-west">מזרח-מערב</option>
+          </select>
+        </div>
+        <div class="solcalc-field">
+          <label class="solcalc-label" for="sc2-bill"><span class="solcalc-label-icon">💡</span> עלות חשמל חודשית (₪)</label>
+          <input class="solcalc-input" type="number" id="sc2-bill" name="monthlyBill" placeholder="לדוגמה: 600" min="0" aria-required="true">
+          <span class="solcalc-hint">לחישוב תשואה ו-ROI</span>
+        </div>
+      </div>
+      <div class="solcalc-error" id="sc2-error" role="alert" aria-live="polite" hidden>⚠️ אנא הזן שטח גג תקין (לפחות 10 מ"ר) ועלות חשמל חודשית כדי לחשב.</div>
+      <button class="solcalc-btn-calc" type="button" id="sc2-calcBtn" aria-label="חשב את הנתונים הסולריים">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        חשב עכשיו
+      </button>
+      <div class="solcalc-results" id="sc2-results" hidden aria-live="polite" aria-label="תוצאות המחשבון">
+        <div class="solcalc-results-header">
+          <div class="solcalc-results-title-row">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <h3 class="solcalc-results-title">תוצאות ההערכה שלך</h3>
+          </div>
+          <p class="solcalc-results-note">הערכה ראשונית — לבדיקה מדויקת פנה לאיש מקצוע</p>
+        </div>
+        <div class="solcalc-results-grid" style="--zappy-grid-cols: repeat(3,1fr); display:grid; grid-template-columns: repeat(3,1fr); gap:16px;" data-zappy-explicit-columns="true">
+          <div class="solcalc-result-card solcalc-result-card--primary">
+            <div class="solcalc-result-icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div>
+            <div class="solcalc-result-label">גודל מערכת מומלץ</div>
+            <div class="solcalc-result-value"><span class="solcalc-result-num" id="sc2-res-size">—</span><span class="solcalc-result-unit">kW</span></div>
+          </div>
+          <div class="solcalc-result-card solcalc-result-card--orange">
+            <div class="solcalc-result-icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+            <div class="solcalc-result-label">עלות מערכת משוערת</div>
+            <div class="solcalc-result-value"><span class="solcalc-result-num" id="sc2-res-cost">—</span><span class="solcalc-result-unit">₪</span></div>
+          </div>
+          <div class="solcalc-result-card solcalc-result-card--blue">
+            <div class="solcalc-result-icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg></div>
+            <div class="solcalc-result-label">תפוקה שנתית צפויה</div>
+            <div class="solcalc-result-value"><span class="solcalc-result-num" id="sc2-res-output">—</span><span class="solcalc-result-unit">kWh</span></div>
+          </div>
+          <div class="solcalc-result-card solcalc-result-card--green">
+            <div class="solcalc-result-icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
+            <div class="solcalc-result-label">תשואה שנתית</div>
+            <div class="solcalc-result-value"><span class="solcalc-result-num" id="sc2-res-roi">—</span><span class="solcalc-result-unit">%</span></div>
+          </div>
+          <div class="solcalc-result-card solcalc-result-card--navy">
+            <div class="solcalc-result-icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+            <div class="solcalc-result-label">החזר השקעה</div>
+            <div class="solcalc-result-value"><span class="solcalc-result-num" id="sc2-res-payback">—</span><span class="solcalc-result-unit">שנים</span></div>
+          </div>
+          <div class="solcalc-result-card solcalc-result-card--teal">
+            <div class="solcalc-result-icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <div class="solcalc-result-label">חיסכון CO₂ שנתי</div>
+            <div class="solcalc-result-value"><span class="solcalc-result-num" id="sc2-res-co2">—</span><span class="solcalc-result-unit">טון</span></div>
+          </div>
+        </div>
+        <div class="solcalc-cta-block">
+          <p class="solcalc-cta-text">רוצה לדעת אם זה כדאי עבורך? קבל בדיקה מקצועית חינם!</p>
+          <a href="#solgag-contact-section" class="solcalc-btn-lead">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 12.7 19.79 19.79 0 0 1 1.06 4.11 2 2 0 0 1 3.04 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"></path></svg>
+            קבל בדיקת כדאיות ללא עלות
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function() {
+    var ROOF_TYPE_FACTOR = { flat: 1.0, tiles: 0.93 };
+    var DIR_FACTOR = { south: 1.0, 'east-west': 0.92, north: 0.80 };
+    function fmt(n, decimals) { return n.toLocaleString('he-IL', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }); }
+    function calc2() {
+      var area = parseFloat(document.getElementById('sc2-roofArea').value);
+      var roofType = document.getElementById('sc2-roofType').value;
+      var dir = document.getElementById('sc2-roofDir').value;
+      var bill = parseFloat(document.getElementById('sc2-bill').value);
+      var errEl = document.getElementById('sc2-error');
+      var resEl = document.getElementById('sc2-results');
+      if (!area || area < 10 || !bill || bill <= 0) { errEl.removeAttribute('hidden'); resEl.setAttribute('hidden',''); return; }
+      errEl.setAttribute('hidden','');
+      var rtFactor = ROOF_TYPE_FACTOR[roofType] || 1.0;
+      var dirFactor = DIR_FACTOR[dir] || 1.0;
+      var systemKW = Math.round((area / 6.71) * rtFactor * dirFactor * 10) / 10;
+      var annualKWh = Math.round(systemKW * 1584);
+      var annualSavingNIS = Math.round(systemKW * 792);
+      var systemCost = Math.round(systemKW * 4785);
+      var co2 = Math.round(systemKW * 0.517 * 10) / 10;
+      var roi = systemCost > 0 ? Math.round((annualSavingNIS / systemCost) * 1000) / 10 : 0;
+      var payback = annualSavingNIS > 0 ? Math.round((systemCost / annualSavingNIS) * 10) / 10 : 0;
+      document.getElementById('sc2-res-size').textContent = fmt(systemKW, 1);
+      document.getElementById('sc2-res-cost').textContent = fmt(systemCost, 0);
+      document.getElementById('sc2-res-output').textContent = fmt(annualKWh, 0);
+      document.getElementById('sc2-res-roi').textContent = fmt(roi, 1);
+      document.getElementById('sc2-res-payback').textContent = fmt(payback, 1);
+      document.getElementById('sc2-res-co2').textContent = fmt(co2, 1);
+      resEl.removeAttribute('hidden');
+      resEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    function init2() {
+      var btn = document.getElementById('sc2-calcBtn');
+      if (btn) btn.addEventListener('click', calc2);
+      ['sc2-roofArea','sc2-bill'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('keydown', function(e) { if (e.key === 'Enter') calc2(); });
+      });
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init2); } else { init2(); }
+  })();
+  </script>
+</section>
+
 <section class="solgag-intro-section" data-layout-spec="מערכת סולארית עם ליווי מלא | סולגג SOLGAG-intro" dir="rtl">
   <div class="solgag-intro-container">
     <div class="solgag-intro-columns">
