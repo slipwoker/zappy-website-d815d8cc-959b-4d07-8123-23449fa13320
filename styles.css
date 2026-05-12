@@ -12002,6 +12002,24 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
     width: 100%;
   }
 }
+
+.solcalc-section {
+  background: linear-gradient(160deg, #0a1628 0%, #0d2248 55%, #0a1628 100%);
+  padding: 80px 24px 100px;
+  direction: rtl;
+  font-family: 'Heebo', 'Assistant', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.solcalc-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(255,120,0,0.08) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(30,120,255,0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
