@@ -2475,6 +2475,25 @@ window.onload = function() {
       if(!m)return val;
       return getComputedStyle(document.documentElement).getPropertyValue('--'+m[1]).trim()||val;
     }
+    function isDecorativeAccentText(el){
+      if(!el||!el.matches)return false;
+      // First: accent / handwritten / script labels — historical contract.
+      if(el.matches('.font-accent,.hero-logotype,.hero-logotype-line,[class*="script"],[class*="accent-line"],[class*="subheadline"]'))return true;
+      if(el.closest('.font-accent,.hero-logotype,.hero-logotype-line,[class*="script"],[class*="accent-line"],[class*="subheadline"]'))return true;
+      // Poster-style hero/display words. The post-gen V2 faithful guards
+      // intentionally paint these in brand colors; the runtime contrast
+      // pass MUST NOT repaint them or PIZZA briefly flashes red then turns
+      // black. Mirrors the preview-side selector list in 02-navigation.js.
+      // Selectors cover legacy hero-word-* / hero-pizza-*, BEM *pizza-word
+      // / *anywhere-word, the regenerated BEM *headline-pizza /
+      // *headline-move / *headline-on-the shapes, AND a final catch-all
+      // for any descendant of h1/h2.display-{xl,1,2} so future class-name
+      // drift does not re-introduce the red-to-black flash.
+      if(el.matches('.display-xl,.display-1,.display-2,[class*="hero-word"],[class*="hero-pizza"],[class*="hero-anywhere"],[class*="pizza-word"],[class*="anywhere-word"],[class*="headline-pizza"],[class*="headline-anywhere"],[class*="headline-on-the"],[class*="headline-move"],[class*="logotype"],[class*="wordmark"]'))return true;
+      if(el.closest('[class*="hero-word"],[class*="hero-pizza"],[class*="hero-anywhere"],[class*="pizza-word"],[class*="anywhere-word"],[class*="headline-pizza"],[class*="headline-anywhere"],[class*="headline-on-the"],[class*="headline-move"],[class*="logotype"],[class*="wordmark"]'))return true;
+      if(el.closest('h1.display-xl,h2.display-xl,h1.display-1,h2.display-1,h1.display-2,h2.display-2'))return true;
+      return false;
+    }
 
     function fixContrast(){
       var root=getComputedStyle(document.documentElement);
@@ -2499,6 +2518,7 @@ window.onload = function() {
       for(var i=0;i<els.length;i++){
         var el=els[i];
         if(el.closest('nav,header,.zappy-header,footer,.zappy-footer'))continue;
+        if(isDecorativeAccentText(el))continue;
         var txt=el.textContent?el.textContent.trim():'';
         if(!txt)continue;
         var r=el.getBoundingClientRect();
