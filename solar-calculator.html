@@ -1816,7 +1816,7 @@
     var systemKW   = Math.round((numPanels * 720) / 1000 * 10) / 10;
     var annualKWh  = Math.round(systemKW * 5.5 * 365);
     var annualSavingNIS = Math.round(systemKW * 792);
-    var systemCost = Math.round(systemKW * 4785);
+    var systemCost = Math.round(systemKW * 3300);
     var co2        = Math.round(systemKW * 0.517 * 10) / 10;
     var roi        = systemCost > 0 ? Math.round((annualSavingNIS / systemCost) * 1000) / 10 : 0;
     var payback    = annualSavingNIS > 0 ? Math.round((systemCost / annualSavingNIS) * 10) / 10 : 0;
