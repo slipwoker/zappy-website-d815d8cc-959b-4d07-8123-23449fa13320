@@ -3225,9 +3225,9 @@
             <div class="solcalc-result-value"><span class="solcalc-result-num" id="sc2-res-output">—</span><span class="solcalc-result-unit">kWh</span></div>
           </div>
           <div class="solcalc-result-card solcalc-result-card--green" data-grid-item-index="3">
-            <div class="solcalc-result-icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
-            <div class="solcalc-result-label">תשואה שנתית</div>
-            <div class="solcalc-result-value"><span class="solcalc-result-num" id="sc2-res-roi">—</span><span class="solcalc-result-unit">%</span></div>
+            <div class="solcalc-result-icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+            <div class="solcalc-result-label">חיסכון שנתי כולל</div>
+            <div class="solcalc-result-value"><span class="solcalc-result-num" id="sc2-res-annual-saving">—</span><span class="solcalc-result-unit">₪</span></div>
           </div>
           <div class="solcalc-result-card solcalc-result-card--navy" data-grid-item-index="4">
             <div class="solcalc-result-icon-wrap"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
@@ -3282,7 +3282,7 @@
       document.getElementById('sc2-res-size').textContent = fmt(systemKW, 1);
       document.getElementById('sc2-res-cost').textContent = fmt(systemCost, 0);
       document.getElementById('sc2-res-output').textContent = fmt(annualKWh, 0);
-      document.getElementById('sc2-res-roi').textContent = fmt(roi, 1);
+      document.getElementById('sc2-res-annual-saving').textContent = fmt(annualSavingNIS, 0);
       document.getElementById('sc2-res-payback').textContent = fmt(payback, 1);
       document.getElementById('sc2-res-co2').textContent = fmt(co2, 1);
       resEl.removeAttribute('hidden');
