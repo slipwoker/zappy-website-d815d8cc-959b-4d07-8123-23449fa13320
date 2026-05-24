@@ -3190,8 +3190,8 @@
           </select>
         </div>
         <div class="solcalc-field" data-grid-item-index="3">
-          <label class="solcalc-label" for="sc2-bill"><span class="solcalc-label-icon">💡</span> עלות חשמל חודשית (₪)</label>
-          <input class="solcalc-input" type="number" id="sc2-bill" name="monthlyBill" placeholder="לדוגמה: 600" min="0" aria-required="true" fdprocessedid="8lqq8q">
+          <label class="solcalc-label" for="sc2-bill">💡 עלות חשמל דו-חודשית (₪)</label>
+          <input class="solcalc-input" type="number" id="sc2-bill" name="monthlyBill" placeholder="לדוגמה: 1200" min="0" aria-required="true" fdprocessedid="8lqq8q">
           <span class="solcalc-hint" style="color: rgb(17, 17, 17) !important;">לחישוב תשואה ו-ROI</span>
         </div>
       </div>
@@ -3273,11 +3273,12 @@
       var systemKW = Math.round((numPanels * 720) / 1000 * rtFactor * 10) / 10;
       var effectiveKW = systemKW * dirFactor;
       var annualKWh = Math.round(effectiveKW * 5.5 * 365);
+      var biMonthlyBill = bill;
+      var monthlyBill = biMonthlyBill / 2;
       var tariff = 0.58;
       var annualSavingNIS = Math.round(annualKWh * tariff);
       var systemCost = Math.round(systemKW * 3300);
       var co2 = Math.round(annualKWh * 0.000327 * 10) / 10;
-      var roi = systemCost > 0 ? Math.round((annualSavingNIS / systemCost) * 1000) / 10 : 0;
       var payback = annualSavingNIS > 0 ? Math.round((systemCost / annualSavingNIS) * 10) / 10 : 0;
       document.getElementById('sc2-res-size').textContent = fmt(systemKW, 1);
       document.getElementById('sc2-res-cost').textContent = fmt(systemCost, 0);
