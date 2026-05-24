@@ -1276,12 +1276,9 @@
         </div>
 
         <div class="solcalc-field" data-grid-item-index="3">
-          <label class="solcalc-label" for="sc-bill">
-            <span class="solcalc-label-icon">💡</span>
-            עלות חשמל חודשית (₪)
-          </label>
+          <label class="solcalc-label" for="sc-bill">💡 עלות חשמל דו-חודשית (₪)</label>
           <input class="solcalc-input" type="number" id="sc-bill" name="monthlyBill" placeholder="לדוגמה: 600" min="0" aria-required="true" fdprocessedid="5x4tam">
-          <span class="solcalc-hint" style="color: rgb(17, 17, 17) !important;">לחישוב תשואה ו-ROI</span>
+          <span class="solcalc-hint" style="color: rgb(17, 17, 17) !important;">מחולק ב-2 לחישוב חודשי</span>
         </div>
 
       </div>
@@ -1815,7 +1812,8 @@
     var numPanels = Math.floor(usableRoofArea / 3.2);
     var systemKW   = Math.round((numPanels * 720) / 1000 * 10) / 10;
     var annualKWh  = Math.round(systemKW * 5.5 * 365);
-    var annualSavingNIS = Math.round(systemKW * 792);
+    var monthlyBill = bill / 2;
+    var annualSavingNIS = Math.round(Math.min(systemKW * 792, monthlyBill * 12));
     var systemCost = Math.round(systemKW * 3300);
     var co2        = Math.round(systemKW * 0.517 * 10) / 10;
     var roi        = systemCost > 0 ? Math.round((annualSavingNIS / systemCost) * 1000) / 10 : 0;
