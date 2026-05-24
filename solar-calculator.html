@@ -1814,7 +1814,7 @@
     var usableRoofArea = area * 0.75;
     var numPanels = Math.floor(usableRoofArea / 3.2);
     var systemKW   = Math.round((numPanels * 720) / 1000 * 10) / 10;
-    var annualKWh  = Math.round(systemKW * 1584);
+    var annualKWh  = Math.round(systemKW * 5.5 * 365);
     var annualSavingNIS = Math.round(systemKW * 792);
     var systemCost = Math.round(systemKW * 4785);
     var co2        = Math.round(systemKW * 0.517 * 10) / 10;
