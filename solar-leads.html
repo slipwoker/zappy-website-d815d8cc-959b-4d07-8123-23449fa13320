@@ -3252,6 +3252,7 @@
   </div>
   <script>
   (function() {
+    'use strict';
     var ROOF_TYPE_FACTOR = { flat: 1.0, tiles: 0.93 };
     var DIR_FACTOR = { south: 1.0, 'east-west': 0.92, north: 0.80 };
     function fmt(n, decimals) { return n.toLocaleString('he-IL', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }); }
@@ -3264,13 +3265,18 @@
       var resEl = document.getElementById('sc2-results');
       if (!area || area < 10 || !bill || bill <= 0) { errEl.removeAttribute('hidden'); resEl.setAttribute('hidden',''); return; }
       errEl.setAttribute('hidden','');
+      // נוסחאות זהות למחשבון האתר הראשי
       var rtFactor = ROOF_TYPE_FACTOR[roofType] || 1.0;
       var dirFactor = DIR_FACTOR[dir] || 1.0;
-      var systemKW = Math.round((area / 6.71) * rtFactor * dirFactor * 10) / 10;
-      var annualKWh = Math.round(systemKW * 1584);
-      var annualSavingNIS = Math.round(systemKW * 792);
-      var systemCost = Math.round(systemKW * 4785);
-      var co2 = Math.round(systemKW * 0.517 * 10) / 10;
+      var usableRoofArea = area * 0.75;
+      var numPanels = Math.floor(usableRoofArea / 3.2);
+      var systemKW = Math.round((numPanels * 720) / 1000 * rtFactor * 10) / 10;
+      var effectiveKW = systemKW * dirFactor;
+      var annualKWh = Math.round(effectiveKW * 5.5 * 365);
+      var tariff = 0.58;
+      var annualSavingNIS = Math.round(annualKWh * tariff);
+      var systemCost = Math.round(systemKW * 3300);
+      var co2 = Math.round(annualKWh * 0.000327 * 10) / 10;
       var roi = systemCost > 0 ? Math.round((annualSavingNIS / systemCost) * 1000) / 10 : 0;
       var payback = annualSavingNIS > 0 ? Math.round((systemCost / annualSavingNIS) * 10) / 10 : 0;
       document.getElementById('sc2-res-size').textContent = fmt(systemKW, 1);
