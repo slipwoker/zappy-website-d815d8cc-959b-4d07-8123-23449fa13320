@@ -1811,7 +1811,9 @@
     var rtFactor  = ROOF_TYPE_FACTOR[roofType] || 1.0;
     var dirFactor = DIR_FACTOR[dir] || 1.0;
 
-    var systemKW   = Math.round((area / 6.71) * rtFactor * dirFactor * 10) / 10;
+    var usableRoofArea = area * 0.75;
+    var numPanels = Math.floor(usableRoofArea / 3.2);
+    var systemKW   = Math.round((numPanels * 720) / 1000 * 10) / 10;
     var annualKWh  = Math.round(systemKW * 1584);
     var annualSavingNIS = Math.round(systemKW * 792);
     var systemCost = Math.round(systemKW * 4785);
