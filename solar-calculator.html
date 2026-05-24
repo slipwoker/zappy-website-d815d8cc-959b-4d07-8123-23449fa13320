@@ -1340,16 +1340,7 @@
             </div>
           </div>
 
-          <div class="solcalc-result-card solcalc-result-card--green" data-grid-item-index="3">
-            <div class="solcalc-result-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-            </div>
-            <div class="solcalc-result-label">תשואה שנתית</div>
-            <div class="solcalc-result-value">
-              <span class="solcalc-result-num" id="sc-res-roi">16.6</span>
-              <span class="solcalc-result-unit">%</span>
-            </div>
-          </div>
+
 
           <div class="solcalc-result-card solcalc-result-card--navy" data-grid-item-index="4">
             <div class="solcalc-result-icon-wrap">
@@ -1813,19 +1804,17 @@
     var systemKW   = Math.round((numPanels * 720) / 1000 * rtFactor * 10) / 10;
     var effectiveKW = systemKW * dirFactor;
     var annualKWh  = Math.round(effectiveKW * 5.5 * 365);
-    var monthlyBill = bill / 2;
     var tariff = 0.58; // ₪ per kWh (Israel 2024)
-    var annualSavingNIS = Math.round(Math.min(annualKWh * tariff, monthlyBill * 12));
+    // חיסכון שנתי = כל הייצור × תעריף (כולל מכירה לרשת / net metering)
+    var annualSavingNIS = Math.round(annualKWh * tariff);
     var systemCost = Math.round(systemKW * 3300);
     var co2        = Math.round(annualKWh * 0.000327 * 10) / 10;
-    var roi        = systemCost > 0 ? Math.round((annualSavingNIS / systemCost) * 1000) / 10 : 0;
     var payback    = annualSavingNIS > 0 ? Math.round((systemCost / annualSavingNIS) * 10) / 10 : 0;
 
     // ── Populate result cards ──
     document.getElementById('sc-res-size').textContent    = fmt(systemKW, 1);
     document.getElementById('sc-res-cost').textContent    = fmt(systemCost, 0);
     document.getElementById('sc-res-output').textContent  = fmt(annualKWh, 0);
-    document.getElementById('sc-res-roi').textContent     = fmt(roi, 1);
     document.getElementById('sc-res-payback').textContent = fmt(payback, 1);
     document.getElementById('sc-res-co2').textContent     = fmt(co2, 1);
 
