@@ -598,9 +598,12 @@
   }
 }
 /* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:solgag-hero */
-.hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: min(var(--display-xl, 6rem), 6rem) !important; line-height: var(--leading-display, 1.05); }
+.hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 48px !important; line-height: 1.2 !important; }
+@media (max-width: 1024px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 36px !important; }
+}
 @media (max-width: 768px) {
-  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: clamp(2rem, 9vw, 3rem) !important; }
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 28px !important; }
 }
 
 /* ZAPPY_POSTGEN_GUARD_HERO_TYPO:מערכת סולארית עם ליווי מלא | סולגג SOLGAG-hero (solgag-hero) — stripped 1 jarring hero headline effect(s) */
@@ -2158,9 +2161,12 @@
   }
 }
 /* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:solgag-hero */
-.hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: min(var(--display-xl, 6rem), 6rem) !important; line-height: var(--leading-display, 1.05); }
+.hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 48px !important; line-height: 1.2 !important; }
+@media (max-width: 1024px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 36px !important; }
+}
 @media (max-width: 768px) {
-  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: clamp(2rem, 9vw, 3rem) !important; }
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 28px !important; }
 }
 
 /* ZAPPY_POSTGEN_GUARD_HERO_TYPO:מערכת סולארית עם ליווי מלא | סולגג SOLGAG-hero (solgag-hero) — stripped 1 jarring hero headline effect(s) */
@@ -2939,7 +2945,7 @@
       </article>
 
       <!-- Card 5 -->
-      <article class="solgag-benefit-card" data-grid-item-index="4" style="">
+      <article class="solgag-benefit-card" data-grid-item-index="4" >
         <div class="solgag-benefit-icon-wrap">
           <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M6 4 H20 L26 10 V28 H6 Z"></path>
@@ -2956,7 +2962,7 @@
       </article>
 
       <!-- Card 6 -->
-      <article class="solgag-benefit-card" data-grid-item-index="5" style="">
+      <article class="solgag-benefit-card" data-grid-item-index="5" >
         <div class="solgag-benefit-icon-wrap">
           <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="16" cy="10" r="5"></circle>
@@ -2972,7 +2978,7 @@
       </article>
 
       <!-- Card 7 -->
-      <article class="solgag-benefit-card" data-grid-item-index="6" style="">
+      <article class="solgag-benefit-card" data-grid-item-index="6" >
         <div class="solgag-benefit-icon-wrap">
           <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M16 3 L19 9 L26 10 L21 15 L22 22 L16 19 L10 22 L11 15 L6 10 L13 9 Z"></path>
@@ -3407,7 +3413,7 @@
         <!-- Column 1: Company Info -->
         <div class="footer-col footer-col--brand">
           <div class="footer-logo-wrap">
-            <img src="/assets/solgag-logo.webp" alt="סולגג | SOLGAG" class="logo" data-zappy-footer-image="true">
+            <img src="/assets/solgag-logo.webp" alt="סולגג | SOLGAG" class="logo" data-zappy-footer-image="true" data-element-type="image" data-element-id="img-1778661053230-lda5dtq6l" >
           </div>
           <p class="footer-tagline">אנרגיה סולארית חכמה לבית ולעסק. מובילים את המעבר לאנרגיה מתחדשת עם טכנולוגיה מתקדמת ומקצועיות ללא פשרות.</p>
           <div class="footer-social">
@@ -3420,14 +3426,7 @@
         <!-- Column 2: Quick Links -->
         <div class="footer-col">
           <h3 class="footer-heading"><span class="heading-accent"></span>ניווט מהיר</h3>
-          <ul class="footer-links">
-            <li><a href="/">בית</a></li>
-            <li><a href="/about">אודות</a></li>
-            <li><a href="/services">שירותים</a></li>
-            <li><a href="/solar-calculator">מחשבון סולארי</a></li>
-            <li><a href="/process-benefits">תהליך ויתרונות</a></li>
-            <li><a href="/projects-contact">פרויקטים וצור קשר</a></li>
-          </ul>
+          <ul class="footer-links" ><li><a href="/">בית</a></li><li><a href="/about">אודות</a></li><li><a href="/services">שירותים</a></li><li><a href="/solar-calculator">מחשבון סולארי</a></li><li><a href="/process-benefits">תהליך ויתרונות</a></li><li><a href="/projects-contact">פרויקטים וצור קשר</a></li></ul>
         </div>
 
         <!-- Column 3: Contact Info -->
@@ -3436,11 +3435,11 @@
           <ul class="footer-contact">
             <li>
               <span class="contact-icon"><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1778579112555-44vr30mue" data-icon-type="fontawesome"></i></span>
-              <span class="contact-text"><a href="mailto:solgag@gmail.com">solgag@gmail.com</a></span>
+              <span class="contact-text"><a href="mailto:solgag@gmail.com" >solgag.israel@gmail.com</a></span>
             </li>
             <li>
               <span class="contact-icon"><i class="fas fa-phone" data-element-type="icon" data-element-id="icon-1778579112555-hkd7f0k8c" data-icon-type="fontawesome"></i></span>
-              <span class="contact-text"><a href="tel:05444444444">05444444444</a></span>
+              <span class="contact-text"><a href="tel:05444444444" >0502846662</a></span>
             </li>
             <li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
               <span class="contact-text">מנחם בגין 7, רמת גן</span></a></li>
@@ -3468,14 +3467,14 @@
     <div class="footer-container">
       <div class="footer-bottom-inner">
         <p class="footer-copyright">© 2026 סולגג | SOLGAG. כל הזכויות שמורות.</p>
-        <div class="footer-legal">
+        <div class="footer-legal" >
           <a href="/privacy">מדיניות פרטיות</a>
           <span class="legal-sep"></span>
           <a href="/terms">תנאי שימוש</a>
           <span class="legal-sep"></span>
           <a href="/accessibility">נגישות</a>
           <span class="legal-sep"></span>
-          <a href="https://zappy5.com" target="_blank" class="zappy-attribution">נוצר באמצעות Zappy</a>
+          <br>
         </div>
       </div>
     </div>
