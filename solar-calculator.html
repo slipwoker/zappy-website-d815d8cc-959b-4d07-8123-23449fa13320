@@ -1810,12 +1810,14 @@
 
     var usableRoofArea = area * 0.75;
     var numPanels = Math.floor(usableRoofArea / 3.2);
-    var systemKW   = Math.round((numPanels * 720) / 1000 * 10) / 10;
-    var annualKWh  = Math.round(systemKW * 5.5 * 365);
+    var systemKW   = Math.round((numPanels * 720) / 1000 * rtFactor * 10) / 10;
+    var effectiveKW = systemKW * dirFactor;
+    var annualKWh  = Math.round(effectiveKW * 5.5 * 365);
     var monthlyBill = bill / 2;
-    var annualSavingNIS = Math.round(Math.min(systemKW * 792, monthlyBill * 12));
+    var tariff = 0.58; // ₪ per kWh (Israel 2024)
+    var annualSavingNIS = Math.round(Math.min(annualKWh * tariff, monthlyBill * 12));
     var systemCost = Math.round(systemKW * 3300);
-    var co2        = Math.round(systemKW * 0.517 * 10) / 10;
+    var co2        = Math.round(annualKWh * 0.000327 * 10) / 10;
     var roi        = systemCost > 0 ? Math.round((annualSavingNIS / systemCost) * 1000) / 10 : 0;
     var payback    = annualSavingNIS > 0 ? Math.round((systemCost / annualSavingNIS) * 10) / 10 : 0;
 
